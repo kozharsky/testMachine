@@ -1,2 +1,4 @@
 # testMachine
 learn
+
+new message
