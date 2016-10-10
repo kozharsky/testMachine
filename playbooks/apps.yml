@@ -1,0 +1,137 @@
+#- hosts: db
+#  vars:
+#    mysql_root_password: 1212
+#  tasks:
+#
+#  - name: Install MySQL for production ready server
+#    apt: pkg=$item state=installed force=yes update_cache=yes
+#    with_items:
+#        - mysql-server
+#        - mysql-client
+#        - python-mysqldb
+#    sudo: yes
+#  - name: Set root password
+#    sudo: yes
+#    mysql_user: 
+#      name: root 
+#      host: "{{ item }}"  
+#      password: "{{ mysql_root_password }}"
+#      login_user: root
+#      login_password: "{{ mysql_root_password }}"
+#      check_implicit_admin: yes
+#      priv: "*.*:ALL,GRANT"
+#    with_items:
+#      - "{{ ansible_hostname }}"
+#      - 127.0.0.1
+#      - ::1
+#      - localhost 
+#  - name: open network mysql
+#    lineinfile: dest=/etc/mysql/my.cnf state=present regexp='^bind-address' line='#bind-address = 127.0.0.1'
+#    sudo: yes
+#
+- hosts: apps
+  tasks:
+  - name: apt-get update
+    command: bash -c "sudo apt-get update"
+  - name: copy .bachrc
+    copy: src=~/virts/ansible/templates/.bashrc dest=/home/ubuntu/
+    sudo: yes
+  - name: apply .bashrc
+    command: bash -c ". ~/.bashrc"
+  - name: installing all packages
+    apt: pkg={{item}}
+    with_items:
+        - git-core
+        - curl
+        - libssl-dev
+        - libreadline-dev
+        - zlib1g-dev 
+        - zlibc
+        - zlib1g
+        - ruby-build
+        - build-essential
+        - libpcre3-dev
+        - m4
+        - ruby-railties-3.2
+        - mysql-client
+        - libmysqlclient-dev
+        - libcurl4-gnutls-dev
+        - nodejs
+        - nginx
+    sudo: yes
+  - name: Install rbenv
+    command: bash -c "curl -L raw.github.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash"
+  - name: Install ruby
+    command: bash -c "/home/ubuntu/.rbenv/bin/rbenv install 2.0.0-p648"
+  - name: set ruby global
+    command: bash -c "/home/ubuntu/.rbenv/bin/rbenv global 2.0.0-p648"
+  - name: getting gem bundler
+    command: bash -c "gem install bundler"
+  - name: getting gem rails
+    command: bash -c "gem install rails -v 4.0.0"
+  - name: getting gem mysql2
+    command: bash -c "gem install mysql2"
+  - name: getting gem passenger
+    command: bash -c "gem install passenger"
+  - name: getting app from github
+    command: bash -c "git clone https://github.com/kozharsky/rails4-mysql-sample.git"
+  - name: copy nginx default
+    copy: src=~/virts/ansible/templates/default dest=/etc/nginx/sites-available#
+    sudo: yes
+  - name: bundle install (installing gems)
+    command: bundle install chdir=/home/ubuntu/rails4-mysql-sample
+  - name: restart nginx 
+    service: name=nginx state=restarted
+    sudo: yes
+  - name: start passenger
+    command: passenger start --auto chdir=/home/ubuntu/rails4-mysql-sample
+
+#  - command: bash -c "gem install mysql2"
+#  - command: bash -c "gem install passenger"
+#  - name: installing rails
+#    command: bash -c "gem install rails -v 4.0.0"
+#  - name: getting app from github
+#    command: bash -c "git clone https://github.com/kozharsky/rails4-mysql-sample.git"
+
+#  - name: apt-get update
+#    command: bash -c "sudo apt-get update"
+#  - name: Install nginx package
+#    apt: pkg=$item
+#    with_items:
+#        - git-core
+#        - curl
+#        - libssl-dev
+#        - libreadline-dev
+#        - zlib1g-dev 
+#        - zlibc
+#        - zlib1g
+#        - ruby-build
+#        - build-essential
+#        - m4
+#        - ruby-railties-3.2
+#        - mysql-client
+#        - libmysqlclient-dev
+#        - libcurl4-gnutls-dev
+#        - nodejs
+#    sudo: yes
+#  - name: Install rbenv
+#    command: bash -c "curl -L raw.github.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash"
+#  - name: Install ruby
+#    command: bash -c "/home/ubuntu/.rbenv/bin/rbenv install 2.0.0-p648"
+#  - name: set ruby global
+#    command: bash -c "/home/ubuntu/.rbenv/bin/rbenv global 2.0.0-p648"
+#  - name: installing bundler and mysql2
+#    command: bash -c "gem install bundler"
+#  - command: bash -c "gem install mysql2"
+#  - command: bash -c "gem install passenger"
+#  - name: installing rails
+#    command: bash -c "gem install rails -v 4.0.0"
+#  - name: getting app from github
+#    command: bash -c "git clone https://github.com/kozharsky/rails4-mysql-sample.git"
+
+
+
+
+    
+
+

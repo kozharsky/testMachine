@@ -1,0 +1,1763 @@
+2016-09-26 11:44:26,154 p=19763 u=dima |  
+2016-09-26 11:44:26,154 p=19763 u=dima |  /usr/bin/ansible apps -m ping
+2016-09-26 11:44:26,154 p=19763 u=dima |  
+2016-09-26 11:44:43,509 p=19763 u=dima |  192.168.0.11 | FAILED => SSH encountered an unknown error during the connection. We recommend you re-run the command using -vvvv, which will enable SSH debugging output to help diagnose the issue
+2016-09-26 11:44:51,322 p=19767 u=dima |  
+2016-09-26 11:44:51,322 p=19767 u=dima |  /usr/bin/ansible apps -m ping -vvvv
+2016-09-26 11:44:51,322 p=19767 u=dima |  
+2016-09-26 11:44:51,331 p=19767 u=dima |  <192.168.0.11> ESTABLISH CONNECTION FOR USER: dima
+2016-09-26 11:44:51,331 p=19767 u=dima |  <192.168.0.11> REMOTE_MODULE ping
+2016-09-26 11:44:51,332 p=19767 u=dima |  <192.168.0.11> EXEC ['ssh', '-C', '-tt', '-vvv', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/home/dima/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '192.168.0.11', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1474879491.33-108443725696642 && chmod a+rx $HOME/.ansible/tmp/ansible-tmp-1474879491.33-108443725696642 && echo $HOME/.ansible/tmp/ansible-tmp-1474879491.33-108443725696642'"]
+2016-09-26 11:45:11,415 p=19767 u=dima |  192.168.0.11 | FAILED => SSH encountered an unknown error. The output was:
+OpenSSH_6.6.1, OpenSSL 1.0.1f 6 Jan 2014
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: auto-mux: Trying existing master
+debug1: Control socket "/home/dima/.ansible/cp/ansible-ssh-192.168.0.11-22-dima" does not exist
+debug2: ssh_connect: needpriv 0
+debug1: Connecting to 192.168.0.11 [192.168.0.11] port 22.
+debug2: fd 3 setting O_NONBLOCK
+debug1: fd 3 clearing O_NONBLOCK
+debug1: Connection established.
+debug3: timeout: 10000 ms remain after connect
+debug1: identity file /home/dima/.ssh/id_rsa type -1
+debug1: identity file /home/dima/.ssh/id_rsa-cert type -1
+debug1: identity file /home/dima/.ssh/id_dsa type -1
+debug1: identity file /home/dima/.ssh/id_dsa-cert type -1
+debug1: identity file /home/dima/.ssh/id_ecdsa type -1
+debug1: identity file /home/dima/.ssh/id_ecdsa-cert type -1
+debug1: identity file /home/dima/.ssh/id_ed25519 type -1
+debug1: identity file /home/dima/.ssh/id_ed25519-cert type -1
+debug1: Enabling compatibility mode for protocol 2.0
+debug1: Local version string SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8
+debug1: Remote protocol version 2.0, remote software version OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8
+debug1: match: OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8 pat OpenSSH_6.6.1* compat 0x04000000
+debug2: fd 3 setting O_NONBLOCK
+debug3: load_hostkeys: loading entries for host "192.168.0.11" from file "/home/dima/.ssh/known_hosts"
+debug3: load_hostkeys: found key type ECDSA in file /home/dima/.ssh/known_hosts:3
+debug3: load_hostkeys: loaded 1 keys
+debug3: order_hostkeyalgs: prefer hostkeyalgs: ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug2: kex_parse_kexinit: curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+debug2: kex_parse_kexinit: ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ssh-dss-cert-v01@openssh.com,ssh-rsa-cert-v00@openssh.com,ssh-dss-cert-v00@openssh.com,ssh-ed25519,ssh-rsa,ssh-dss
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: zlib@openssh.com,zlib,none
+debug2: kex_parse_kexinit: zlib@openssh.com,zlib,none
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: first_kex_follows 0 
+debug2: kex_parse_kexinit: reserved 0 
+debug2: kex_parse_kexinit: curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+debug2: kex_parse_kexinit: ssh-rsa,ssh-dss,ecdsa-sha2-nistp256,ssh-ed25519
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: none,zlib@openssh.com
+debug2: kex_parse_kexinit: none,zlib@openssh.com
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: first_kex_follows 0 
+debug2: kex_parse_kexinit: reserved 0 
+debug2: mac_setup: setup hmac-md5-etm@openssh.com
+debug1: kex: server->client aes128-ctr hmac-md5-etm@openssh.com zlib@openssh.com
+debug2: mac_setup: setup hmac-md5-etm@openssh.com
+debug1: kex: client->server aes128-ctr hmac-md5-etm@openssh.com zlib@openssh.com
+debug1: sending SSH2_MSG_KEX_ECDH_INIT
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ECDSA 8c:9e:70:c8:b2:bb:a1:c3:6b:fe:7f:0d:47:90:20:d1
+debug3: load_hostkeys: loading entries for host "192.168.0.11" from file "/home/dima/.ssh/known_hosts"
+debug3: load_hostkeys: found key type ECDSA in file /home/dima/.ssh/known_hosts:3
+debug3: load_hostkeys: loaded 1 keys
+debug1: Host '192.168.0.11' is known and matches the ECDSA host key.
+debug1: Found key in /home/dima/.ssh/known_hosts:3
+debug1: ssh_ecdsa_verify: signature correct
+debug2: kex_derive_keys
+debug2: set_newkeys: mode 1
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug2: set_newkeys: mode 0
+debug1: SSH2_MSG_NEWKEYS received
+debug1: SSH2_MSG_SERVICE_REQUEST sent
+debug2: service_accept: ssh-userauth
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug2: key: dima@dima-All-Series (0x563af2f490c0),
+debug2: key: /home/dima/.ssh/id_rsa ((nil)),
+debug2: key: /home/dima/.ssh/id_dsa ((nil)),
+debug2: key: /home/dima/.ssh/id_ecdsa ((nil)),
+debug2: key: /home/dima/.ssh/id_ed25519 ((nil)),
+debug1: Authentications that can continue: publickey,password
+debug3: start over, passed a different list publickey,password
+debug3: preferred gssapi-with-mic,gssapi-keyex,hostbased,publickey
+debug3: authmethod_lookup publickey
+debug3: remaining preferred: ,gssapi-keyex,hostbased,publickey
+debug3: authmethod_is_enabled publickey
+debug1: Next authentication method: publickey
+debug1: Offering RSA public key: dima@dima-All-Series
+debug3: send_pubkey_test
+debug2: we sent a publickey packet, wait for reply
+debug1: Authentications that can continue: publickey,password
+debug1: Trying private key: /home/dima/.ssh/id_rsa
+debug3: no such identity: /home/dima/.ssh/id_rsa: No such file or directory
+debug1: Trying private key: /home/dima/.ssh/id_dsa
+debug3: no such identity: /home/dima/.ssh/id_dsa: No such file or directory
+debug1: Trying private key: /home/dima/.ssh/id_ecdsa
+debug3: no such identity: /home/dima/.ssh/id_ecdsa: No such file or directory
+debug1: Trying private key: /home/dima/.ssh/id_ed25519
+debug3: no such identity: /home/dima/.ssh/id_ed25519: No such file or directory
+debug2: we did not send a packet, disable method
+debug1: No more authentication methods to try.
+Permission denied (publickey,password).
+
+2016-09-26 11:49:49,130 p=19829 u=dima |  
+2016-09-26 11:49:49,130 p=19829 u=dima |  /usr/bin/ansible apps -m ping -vvvv
+2016-09-26 11:49:49,130 p=19829 u=dima |  
+2016-09-26 11:49:49,139 p=19829 u=dima |  <192.168.0.11> ESTABLISH CONNECTION FOR USER: dima
+2016-09-26 11:49:49,139 p=19829 u=dima |  <192.168.0.11> REMOTE_MODULE ping
+2016-09-26 11:49:49,140 p=19829 u=dima |  <192.168.0.11> EXEC ['ssh', '-C', '-tt', '-vvv', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/home/dima/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '192.168.0.11', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1474879789.14-90406406341718 && chmod a+rx $HOME/.ansible/tmp/ansible-tmp-1474879789.14-90406406341718 && echo $HOME/.ansible/tmp/ansible-tmp-1474879789.14-90406406341718'"]
+2016-09-26 11:50:09,215 p=19829 u=dima |  192.168.0.11 | FAILED => SSH encountered an unknown error. The output was:
+OpenSSH_6.6.1, OpenSSL 1.0.1f 6 Jan 2014
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: auto-mux: Trying existing master
+debug1: Control socket "/home/dima/.ansible/cp/ansible-ssh-192.168.0.11-22-dima" does not exist
+debug2: ssh_connect: needpriv 0
+debug1: Connecting to 192.168.0.11 [192.168.0.11] port 22.
+debug2: fd 3 setting O_NONBLOCK
+debug1: fd 3 clearing O_NONBLOCK
+debug1: Connection established.
+debug3: timeout: 10000 ms remain after connect
+debug1: identity file /home/dima/.ssh/id_rsa type -1
+debug1: identity file /home/dima/.ssh/id_rsa-cert type -1
+debug1: identity file /home/dima/.ssh/id_dsa type -1
+debug1: identity file /home/dima/.ssh/id_dsa-cert type -1
+debug1: identity file /home/dima/.ssh/id_ecdsa type -1
+debug1: identity file /home/dima/.ssh/id_ecdsa-cert type -1
+debug1: identity file /home/dima/.ssh/id_ed25519 type -1
+debug1: identity file /home/dima/.ssh/id_ed25519-cert type -1
+debug1: Enabling compatibility mode for protocol 2.0
+debug1: Local version string SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8
+debug1: Remote protocol version 2.0, remote software version OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8
+debug1: match: OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8 pat OpenSSH_6.6.1* compat 0x04000000
+debug2: fd 3 setting O_NONBLOCK
+debug3: load_hostkeys: loading entries for host "192.168.0.11" from file "/home/dima/.ssh/known_hosts"
+debug3: load_hostkeys: found key type ECDSA in file /home/dima/.ssh/known_hosts:3
+debug3: load_hostkeys: loaded 1 keys
+debug3: order_hostkeyalgs: prefer hostkeyalgs: ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug2: kex_parse_kexinit: curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+debug2: kex_parse_kexinit: ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ssh-dss-cert-v01@openssh.com,ssh-rsa-cert-v00@openssh.com,ssh-dss-cert-v00@openssh.com,ssh-ed25519,ssh-rsa,ssh-dss
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: zlib@openssh.com,zlib,none
+debug2: kex_parse_kexinit: zlib@openssh.com,zlib,none
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: first_kex_follows 0 
+debug2: kex_parse_kexinit: reserved 0 
+debug2: kex_parse_kexinit: curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+debug2: kex_parse_kexinit: ssh-rsa,ssh-dss,ecdsa-sha2-nistp256,ssh-ed25519
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: none,zlib@openssh.com
+debug2: kex_parse_kexinit: none,zlib@openssh.com
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: first_kex_follows 0 
+debug2: kex_parse_kexinit: reserved 0 
+debug2: mac_setup: setup hmac-md5-etm@openssh.com
+debug1: kex: server->client aes128-ctr hmac-md5-etm@openssh.com zlib@openssh.com
+debug2: mac_setup: setup hmac-md5-etm@openssh.com
+debug1: kex: client->server aes128-ctr hmac-md5-etm@openssh.com zlib@openssh.com
+debug1: sending SSH2_MSG_KEX_ECDH_INIT
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ECDSA 8c:9e:70:c8:b2:bb:a1:c3:6b:fe:7f:0d:47:90:20:d1
+debug3: load_hostkeys: loading entries for host "192.168.0.11" from file "/home/dima/.ssh/known_hosts"
+debug3: load_hostkeys: found key type ECDSA in file /home/dima/.ssh/known_hosts:3
+debug3: load_hostkeys: loaded 1 keys
+debug1: Host '192.168.0.11' is known and matches the ECDSA host key.
+debug1: Found key in /home/dima/.ssh/known_hosts:3
+debug1: ssh_ecdsa_verify: signature correct
+debug2: kex_derive_keys
+debug2: set_newkeys: mode 1
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug2: set_newkeys: mode 0
+debug1: SSH2_MSG_NEWKEYS received
+debug1: SSH2_MSG_SERVICE_REQUEST sent
+debug2: service_accept: ssh-userauth
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug2: key: dima@dima-All-Series (0x55fcb36430c0),
+debug2: key: /home/dima/.ssh/id_rsa ((nil)),
+debug2: key: /home/dima/.ssh/id_dsa ((nil)),
+debug2: key: /home/dima/.ssh/id_ecdsa ((nil)),
+debug2: key: /home/dima/.ssh/id_ed25519 ((nil)),
+debug1: Authentications that can continue: publickey,password
+debug3: start over, passed a different list publickey,password
+debug3: preferred gssapi-with-mic,gssapi-keyex,hostbased,publickey
+debug3: authmethod_lookup publickey
+debug3: remaining preferred: ,gssapi-keyex,hostbased,publickey
+debug3: authmethod_is_enabled publickey
+debug1: Next authentication method: publickey
+debug1: Offering RSA public key: dima@dima-All-Series
+debug3: send_pubkey_test
+debug2: we sent a publickey packet, wait for reply
+debug1: Authentications that can continue: publickey,password
+debug1: Trying private key: /home/dima/.ssh/id_rsa
+debug3: no such identity: /home/dima/.ssh/id_rsa: No such file or directory
+debug1: Trying private key: /home/dima/.ssh/id_dsa
+debug3: no such identity: /home/dima/.ssh/id_dsa: No such file or directory
+debug1: Trying private key: /home/dima/.ssh/id_ecdsa
+debug3: no such identity: /home/dima/.ssh/id_ecdsa: No such file or directory
+debug1: Trying private key: /home/dima/.ssh/id_ed25519
+debug3: no such identity: /home/dima/.ssh/id_ed25519: No such file or directory
+debug2: we did not send a packet, disable method
+debug1: No more authentication methods to try.
+Permission denied (publickey,password).
+
+2016-09-26 11:55:24,133 p=25955 u=dima |  
+2016-09-26 11:55:24,133 p=25955 u=dima |  /usr/bin/ansible apps -m ping -vv
+2016-09-26 11:55:24,133 p=25955 u=dima |  
+2016-09-26 11:55:24,142 p=25955 u=dima |  <192.168.0.11> REMOTE_MODULE ping
+2016-09-26 11:55:44,220 p=25955 u=dima |  192.168.0.11 | FAILED => SSH encountered an unknown error during the connection. We recommend you re-run the command using -vvvv, which will enable SSH debugging output to help diagnose the issue
+2016-09-26 11:55:51,574 p=28105 u=dima |  
+2016-09-26 11:55:51,574 p=28105 u=dima |  /usr/bin/ansible apps -m ping -vvvv
+2016-09-26 11:55:51,574 p=28105 u=dima |  
+2016-09-26 11:55:51,583 p=28105 u=dima |  <192.168.0.11> ESTABLISH CONNECTION FOR USER: dima
+2016-09-26 11:55:51,583 p=28105 u=dima |  <192.168.0.11> REMOTE_MODULE ping
+2016-09-26 11:55:51,584 p=28105 u=dima |  <192.168.0.11> EXEC ['ssh', '-C', '-tt', '-vvv', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/home/dima/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '192.168.0.11', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1474880151.58-189400659556610 && chmod a+rx $HOME/.ansible/tmp/ansible-tmp-1474880151.58-189400659556610 && echo $HOME/.ansible/tmp/ansible-tmp-1474880151.58-189400659556610'"]
+2016-09-26 11:56:11,667 p=28105 u=dima |  192.168.0.11 | FAILED => SSH encountered an unknown error. The output was:
+OpenSSH_6.6.1, OpenSSL 1.0.1f 6 Jan 2014
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: auto-mux: Trying existing master
+debug1: Control socket "/home/dima/.ansible/cp/ansible-ssh-192.168.0.11-22-dima" does not exist
+debug2: ssh_connect: needpriv 0
+debug1: Connecting to 192.168.0.11 [192.168.0.11] port 22.
+debug2: fd 3 setting O_NONBLOCK
+debug1: fd 3 clearing O_NONBLOCK
+debug1: Connection established.
+debug3: timeout: 10000 ms remain after connect
+debug3: Incorrect RSA1 identifier
+debug3: Could not load "/home/dima/.ssh/id_rsa" as a RSA1 public key
+debug1: identity file /home/dima/.ssh/id_rsa type 1
+debug1: identity file /home/dima/.ssh/id_rsa-cert type -1
+debug1: identity file /home/dima/.ssh/id_dsa type -1
+debug1: identity file /home/dima/.ssh/id_dsa-cert type -1
+debug1: identity file /home/dima/.ssh/id_ecdsa type -1
+debug1: identity file /home/dima/.ssh/id_ecdsa-cert type -1
+debug1: identity file /home/dima/.ssh/id_ed25519 type -1
+debug1: identity file /home/dima/.ssh/id_ed25519-cert type -1
+debug1: Enabling compatibility mode for protocol 2.0
+debug1: Local version string SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8
+debug1: Remote protocol version 2.0, remote software version OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8
+debug1: match: OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8 pat OpenSSH_6.6.1* compat 0x04000000
+debug2: fd 3 setting O_NONBLOCK
+debug3: load_hostkeys: loading entries for host "192.168.0.11" from file "/home/dima/.ssh/known_hosts"
+debug3: load_hostkeys: found key type ECDSA in file /home/dima/.ssh/known_hosts:3
+debug3: load_hostkeys: loaded 1 keys
+debug3: order_hostkeyalgs: prefer hostkeyalgs: ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug2: kex_parse_kexinit: curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+debug2: kex_parse_kexinit: ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ssh-dss-cert-v01@openssh.com,ssh-rsa-cert-v00@openssh.com,ssh-dss-cert-v00@openssh.com,ssh-ed25519,ssh-rsa,ssh-dss
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: zlib@openssh.com,zlib,none
+debug2: kex_parse_kexinit: zlib@openssh.com,zlib,none
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: first_kex_follows 0 
+debug2: kex_parse_kexinit: reserved 0 
+debug2: kex_parse_kexinit: curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+debug2: kex_parse_kexinit: ssh-rsa,ssh-dss,ecdsa-sha2-nistp256,ssh-ed25519
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: none,zlib@openssh.com
+debug2: kex_parse_kexinit: none,zlib@openssh.com
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: first_kex_follows 0 
+debug2: kex_parse_kexinit: reserved 0 
+debug2: mac_setup: setup hmac-md5-etm@openssh.com
+debug1: kex: server->client aes128-ctr hmac-md5-etm@openssh.com zlib@openssh.com
+debug2: mac_setup: setup hmac-md5-etm@openssh.com
+debug1: kex: client->server aes128-ctr hmac-md5-etm@openssh.com zlib@openssh.com
+debug1: sending SSH2_MSG_KEX_ECDH_INIT
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ECDSA 8c:9e:70:c8:b2:bb:a1:c3:6b:fe:7f:0d:47:90:20:d1
+debug3: load_hostkeys: loading entries for host "192.168.0.11" from file "/home/dima/.ssh/known_hosts"
+debug3: load_hostkeys: found key type ECDSA in file /home/dima/.ssh/known_hosts:3
+debug3: load_hostkeys: loaded 1 keys
+debug1: Host '192.168.0.11' is known and matches the ECDSA host key.
+debug1: Found key in /home/dima/.ssh/known_hosts:3
+debug1: ssh_ecdsa_verify: signature correct
+debug2: kex_derive_keys
+debug2: set_newkeys: mode 1
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug2: set_newkeys: mode 0
+debug1: SSH2_MSG_NEWKEYS received
+debug1: SSH2_MSG_SERVICE_REQUEST sent
+debug2: service_accept: ssh-userauth
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug2: key: /home/dima/.ssh/id_rsa (0x55732345cb40),
+debug2: key: dima@dima-All-Series (0x557323462810),
+debug2: key: /home/dima/.ssh/id_dsa ((nil)),
+debug2: key: /home/dima/.ssh/id_ecdsa ((nil)),
+debug2: key: /home/dima/.ssh/id_ed25519 ((nil)),
+debug1: Authentications that can continue: publickey,password
+debug3: start over, passed a different list publickey,password
+debug3: preferred gssapi-with-mic,gssapi-keyex,hostbased,publickey
+debug3: authmethod_lookup publickey
+debug3: remaining preferred: ,gssapi-keyex,hostbased,publickey
+debug3: authmethod_is_enabled publickey
+debug1: Next authentication method: publickey
+debug1: Offering RSA public key: /home/dima/.ssh/id_rsa
+debug3: send_pubkey_test
+debug2: we sent a publickey packet, wait for reply
+debug1: Authentications that can continue: publickey,password
+debug1: Offering RSA public key: dima@dima-All-Series
+debug3: send_pubkey_test
+debug2: we sent a publickey packet, wait for reply
+debug1: Authentications that can continue: publickey,password
+debug1: Trying private key: /home/dima/.ssh/id_dsa
+debug3: no such identity: /home/dima/.ssh/id_dsa: No such file or directory
+debug1: Trying private key: /home/dima/.ssh/id_ecdsa
+debug3: no such identity: /home/dima/.ssh/id_ecdsa: No such file or directory
+debug1: Trying private key: /home/dima/.ssh/id_ed25519
+debug3: no such identity: /home/dima/.ssh/id_ed25519: No such file or directory
+debug2: we did not send a packet, disable method
+debug1: No more authentication methods to try.
+Permission denied (publickey,password).
+
+2016-09-26 12:00:55,315 p=8482 u=dima |  
+2016-09-26 12:00:55,315 p=8482 u=dima |  /usr/bin/ansible apps -m ping -vv
+2016-09-26 12:00:55,315 p=8482 u=dima |  
+2016-09-26 12:00:55,324 p=8482 u=dima |  <192.168.0.11> REMOTE_MODULE ping
+2016-09-26 12:01:15,405 p=8482 u=dima |  192.168.0.11 | FAILED => SSH encountered an unknown error during the connection. We recommend you re-run the command using -vvvv, which will enable SSH debugging output to help diagnose the issue
+2016-09-26 12:01:30,309 p=8486 u=dima |  
+2016-09-26 12:01:30,309 p=8486 u=dima |  /usr/bin/ansible apps -m ping -vvvv
+2016-09-26 12:01:30,309 p=8486 u=dima |  
+2016-09-26 12:01:30,318 p=8486 u=dima |  <192.168.0.11> ESTABLISH CONNECTION FOR USER: dima
+2016-09-26 12:01:30,318 p=8486 u=dima |  <192.168.0.11> REMOTE_MODULE ping
+2016-09-26 12:01:30,318 p=8486 u=dima |  <192.168.0.11> EXEC ['ssh', '-C', '-tt', '-vvv', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/home/dima/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '192.168.0.11', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1474880490.32-142126660047853 && chmod a+rx $HOME/.ansible/tmp/ansible-tmp-1474880490.32-142126660047853 && echo $HOME/.ansible/tmp/ansible-tmp-1474880490.32-142126660047853'"]
+2016-09-26 12:01:50,399 p=8486 u=dima |  192.168.0.11 | FAILED => SSH encountered an unknown error. The output was:
+OpenSSH_6.6.1, OpenSSL 1.0.1f 6 Jan 2014
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: auto-mux: Trying existing master
+debug1: Control socket "/home/dima/.ansible/cp/ansible-ssh-192.168.0.11-22-dima" does not exist
+debug2: ssh_connect: needpriv 0
+debug1: Connecting to 192.168.0.11 [192.168.0.11] port 22.
+debug2: fd 3 setting O_NONBLOCK
+debug1: fd 3 clearing O_NONBLOCK
+debug1: Connection established.
+debug3: timeout: 10000 ms remain after connect
+debug3: Incorrect RSA1 identifier
+debug3: Could not load "/home/dima/.ssh/id_rsa" as a RSA1 public key
+debug1: identity file /home/dima/.ssh/id_rsa type 1
+debug1: identity file /home/dima/.ssh/id_rsa-cert type -1
+debug1: identity file /home/dima/.ssh/id_dsa type -1
+debug1: identity file /home/dima/.ssh/id_dsa-cert type -1
+debug1: identity file /home/dima/.ssh/id_ecdsa type -1
+debug1: identity file /home/dima/.ssh/id_ecdsa-cert type -1
+debug1: identity file /home/dima/.ssh/id_ed25519 type -1
+debug1: identity file /home/dima/.ssh/id_ed25519-cert type -1
+debug1: Enabling compatibility mode for protocol 2.0
+debug1: Local version string SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8
+debug1: Remote protocol version 2.0, remote software version OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8
+debug1: match: OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8 pat OpenSSH_6.6.1* compat 0x04000000
+debug2: fd 3 setting O_NONBLOCK
+debug3: load_hostkeys: loading entries for host "192.168.0.11" from file "/home/dima/.ssh/known_hosts"
+debug3: load_hostkeys: found key type ECDSA in file /home/dima/.ssh/known_hosts:3
+debug3: load_hostkeys: loaded 1 keys
+debug3: order_hostkeyalgs: prefer hostkeyalgs: ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug2: kex_parse_kexinit: curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+debug2: kex_parse_kexinit: ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ssh-dss-cert-v01@openssh.com,ssh-rsa-cert-v00@openssh.com,ssh-dss-cert-v00@openssh.com,ssh-ed25519,ssh-rsa,ssh-dss
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: zlib@openssh.com,zlib,none
+debug2: kex_parse_kexinit: zlib@openssh.com,zlib,none
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: first_kex_follows 0 
+debug2: kex_parse_kexinit: reserved 0 
+debug2: kex_parse_kexinit: curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+debug2: kex_parse_kexinit: ssh-rsa,ssh-dss,ecdsa-sha2-nistp256,ssh-ed25519
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: none,zlib@openssh.com
+debug2: kex_parse_kexinit: none,zlib@openssh.com
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: first_kex_follows 0 
+debug2: kex_parse_kexinit: reserved 0 
+debug2: mac_setup: setup hmac-md5-etm@openssh.com
+debug1: kex: server->client aes128-ctr hmac-md5-etm@openssh.com zlib@openssh.com
+debug2: mac_setup: setup hmac-md5-etm@openssh.com
+debug1: kex: client->server aes128-ctr hmac-md5-etm@openssh.com zlib@openssh.com
+debug1: sending SSH2_MSG_KEX_ECDH_INIT
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ECDSA 8c:9e:70:c8:b2:bb:a1:c3:6b:fe:7f:0d:47:90:20:d1
+debug3: load_hostkeys: loading entries for host "192.168.0.11" from file "/home/dima/.ssh/known_hosts"
+debug3: load_hostkeys: found key type ECDSA in file /home/dima/.ssh/known_hosts:3
+debug3: load_hostkeys: loaded 1 keys
+debug1: Host '192.168.0.11' is known and matches the ECDSA host key.
+debug1: Found key in /home/dima/.ssh/known_hosts:3
+debug1: ssh_ecdsa_verify: signature correct
+debug2: kex_derive_keys
+debug2: set_newkeys: mode 1
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug2: set_newkeys: mode 0
+debug1: SSH2_MSG_NEWKEYS received
+debug1: SSH2_MSG_SERVICE_REQUEST sent
+debug2: service_accept: ssh-userauth
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug2: key: /home/dima/.ssh/id_rsa (0x5577ab499b40),
+debug2: key: dima@dima-All-Series (0x5577ab49f810),
+debug2: key: /home/dima/.ssh/id_dsa ((nil)),
+debug2: key: /home/dima/.ssh/id_ecdsa ((nil)),
+debug2: key: /home/dima/.ssh/id_ed25519 ((nil)),
+debug1: Authentications that can continue: publickey,password
+debug3: start over, passed a different list publickey,password
+debug3: preferred gssapi-with-mic,gssapi-keyex,hostbased,publickey
+debug3: authmethod_lookup publickey
+debug3: remaining preferred: ,gssapi-keyex,hostbased,publickey
+debug3: authmethod_is_enabled publickey
+debug1: Next authentication method: publickey
+debug1: Offering RSA public key: /home/dima/.ssh/id_rsa
+debug3: send_pubkey_test
+debug2: we sent a publickey packet, wait for reply
+debug1: Authentications that can continue: publickey,password
+debug1: Offering RSA public key: dima@dima-All-Series
+debug3: send_pubkey_test
+debug2: we sent a publickey packet, wait for reply
+debug1: Authentications that can continue: publickey,password
+debug1: Trying private key: /home/dima/.ssh/id_dsa
+debug3: no such identity: /home/dima/.ssh/id_dsa: No such file or directory
+debug1: Trying private key: /home/dima/.ssh/id_ecdsa
+debug3: no such identity: /home/dima/.ssh/id_ecdsa: No such file or directory
+debug1: Trying private key: /home/dima/.ssh/id_ed25519
+debug3: no such identity: /home/dima/.ssh/id_ed25519: No such file or directory
+debug2: we did not send a packet, disable method
+debug1: No more authentication methods to try.
+Permission denied (publickey,password).
+
+2016-09-26 12:10:51,039 p=8502 u=root |  
+2016-09-26 12:10:51,039 p=8502 u=root |  /usr/bin/ansible apps -m ping -vvvv
+2016-09-26 12:10:51,039 p=8502 u=root |  
+2016-09-26 12:10:51,048 p=8502 u=root |  <192.168.0.11> ESTABLISH CONNECTION FOR USER: root
+2016-09-26 12:10:51,048 p=8502 u=root |  <192.168.0.11> REMOTE_MODULE ping
+2016-09-26 12:10:51,049 p=8502 u=root |  <192.168.0.11> EXEC ['ssh', '-C', '-tt', '-vvv', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/home/dima/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '192.168.0.11', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1474881051.05-111689940360915 && echo $HOME/.ansible/tmp/ansible-tmp-1474881051.05-111689940360915'"]
+2016-09-26 12:11:18,541 p=8502 u=root |  192.168.0.11 | FAILED => SSH encountered an unknown error. The output was:
+OpenSSH_6.6.1, OpenSSL 1.0.1f 6 Jan 2014
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: auto-mux: Trying existing master
+debug1: Control socket "/home/dima/.ansible/cp/ansible-ssh-192.168.0.11-22-root" does not exist
+debug2: ssh_connect: needpriv 0
+debug1: Connecting to 192.168.0.11 [192.168.0.11] port 22.
+debug2: fd 3 setting O_NONBLOCK
+debug1: fd 3 clearing O_NONBLOCK
+debug1: Connection established.
+debug3: timeout: 10000 ms remain after connect
+debug1: permanently_set_uid: 0/0
+debug1: SELinux support disabled
+debug1: identity file /root/.ssh/id_rsa type -1
+debug1: identity file /root/.ssh/id_rsa-cert type -1
+debug1: identity file /root/.ssh/id_dsa type -1
+debug1: identity file /root/.ssh/id_dsa-cert type -1
+debug1: identity file /root/.ssh/id_ecdsa type -1
+debug1: identity file /root/.ssh/id_ecdsa-cert type -1
+debug1: identity file /root/.ssh/id_ed25519 type -1
+debug1: identity file /root/.ssh/id_ed25519-cert type -1
+debug1: Enabling compatibility mode for protocol 2.0
+debug1: Local version string SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8
+debug1: Remote protocol version 2.0, remote software version OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8
+debug1: match: OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8 pat OpenSSH_6.6.1* compat 0x04000000
+debug2: fd 3 setting O_NONBLOCK
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug2: kex_parse_kexinit: curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+debug2: kex_parse_kexinit: ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ssh-dss-cert-v01@openssh.com,ssh-rsa-cert-v00@openssh.com,ssh-dss-cert-v00@openssh.com,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,ssh-ed25519,ssh-rsa,ssh-dss
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: zlib@openssh.com,zlib,none
+debug2: kex_parse_kexinit: zlib@openssh.com,zlib,none
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: first_kex_follows 0 
+debug2: kex_parse_kexinit: reserved 0 
+debug2: kex_parse_kexinit: curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+debug2: kex_parse_kexinit: ssh-rsa,ssh-dss,ecdsa-sha2-nistp256,ssh-ed25519
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: none,zlib@openssh.com
+debug2: kex_parse_kexinit: none,zlib@openssh.com
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: first_kex_follows 0 
+debug2: kex_parse_kexinit: reserved 0 
+debug2: mac_setup: setup hmac-md5-etm@openssh.com
+debug1: kex: server->client aes128-ctr hmac-md5-etm@openssh.com zlib@openssh.com
+debug2: mac_setup: setup hmac-md5-etm@openssh.com
+debug1: kex: client->server aes128-ctr hmac-md5-etm@openssh.com zlib@openssh.com
+debug1: sending SSH2_MSG_KEX_ECDH_INIT
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ECDSA 8c:9e:70:c8:b2:bb:a1:c3:6b:fe:7f:0d:47:90:20:d1
+Warning: Permanently added '192.168.0.11' (ECDSA) to the list of known hosts.
+debug1: ssh_ecdsa_verify: signature correct
+debug2: kex_derive_keys
+debug2: set_newkeys: mode 1
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug2: set_newkeys: mode 0
+debug1: SSH2_MSG_NEWKEYS received
+debug1: SSH2_MSG_SERVICE_REQUEST sent
+debug2: service_accept: ssh-userauth
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug2: key: /root/.ssh/id_rsa ((nil)),
+debug2: key: /root/.ssh/id_dsa ((nil)),
+debug2: key: /root/.ssh/id_ecdsa ((nil)),
+debug2: key: /root/.ssh/id_ed25519 ((nil)),
+debug1: Authentications that can continue: publickey,password
+debug3: start over, passed a different list publickey,password
+debug3: preferred gssapi-with-mic,gssapi-keyex,hostbased,publickey
+debug3: authmethod_lookup publickey
+debug3: remaining preferred: ,gssapi-keyex,hostbased,publickey
+debug3: authmethod_is_enabled publickey
+debug1: Next authentication method: publickey
+debug1: Trying private key: /root/.ssh/id_rsa
+debug3: no such identity: /root/.ssh/id_rsa: No such file or directory
+debug1: Trying private key: /root/.ssh/id_dsa
+debug3: no such identity: /root/.ssh/id_dsa: No such file or directory
+debug1: Trying private key: /root/.ssh/id_ecdsa
+debug3: no such identity: /root/.ssh/id_ecdsa: No such file or directory
+debug1: Trying private key: /root/.ssh/id_ed25519
+debug3: no such identity: /root/.ssh/id_ed25519: No such file or directory
+debug2: we did not send a packet, disable method
+debug1: No more authentication methods to try.
+Permission denied (publickey,password).
+
+2016-09-26 12:15:02,354 p=8555 u=root |  
+2016-09-26 12:15:02,354 p=8555 u=root |  /usr/bin/ansible apps -m ping -vvvv
+2016-09-26 12:15:02,355 p=8555 u=root |  
+2016-09-26 12:15:02,362 p=8555 u=root |  <192.168.0.11> ESTABLISH CONNECTION FOR USER: root
+2016-09-26 12:15:02,363 p=8555 u=root |  <192.168.0.11> REMOTE_MODULE ping
+2016-09-26 12:15:02,363 p=8555 u=root |  <192.168.0.11> EXEC ['ssh', '-C', '-tt', '-vvv', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/home/dima/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '192.168.0.11', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1474881302.36-251163754085710 && echo $HOME/.ansible/tmp/ansible-tmp-1474881302.36-251163754085710'"]
+2016-09-26 12:15:21,045 p=8555 u=root |  192.168.0.11 | FAILED => SSH encountered an unknown error. The output was:
+OpenSSH_6.6.1, OpenSSL 1.0.1f 6 Jan 2014
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: auto-mux: Trying existing master
+debug1: Control socket "/home/dima/.ansible/cp/ansible-ssh-192.168.0.11-22-root" does not exist
+debug2: ssh_connect: needpriv 0
+debug1: Connecting to 192.168.0.11 [192.168.0.11] port 22.
+debug2: fd 3 setting O_NONBLOCK
+debug1: fd 3 clearing O_NONBLOCK
+debug1: Connection established.
+debug3: timeout: 10000 ms remain after connect
+debug1: permanently_set_uid: 0/0
+debug1: identity file /root/.ssh/id_rsa type -1
+debug1: identity file /root/.ssh/id_rsa-cert type -1
+debug1: identity file /root/.ssh/id_dsa type -1
+debug1: identity file /root/.ssh/id_dsa-cert type -1
+debug1: identity file /root/.ssh/id_ecdsa type -1
+debug1: identity file /root/.ssh/id_ecdsa-cert type -1
+debug1: identity file /root/.ssh/id_ed25519 type -1
+debug1: identity file /root/.ssh/id_ed25519-cert type -1
+debug1: Enabling compatibility mode for protocol 2.0
+debug1: Local version string SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8
+debug1: Remote protocol version 2.0, remote software version OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8
+debug1: match: OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8 pat OpenSSH_6.6.1* compat 0x04000000
+debug2: fd 3 setting O_NONBLOCK
+debug3: load_hostkeys: loading entries for host "192.168.0.11" from file "/root/.ssh/known_hosts"
+debug3: load_hostkeys: found key type ECDSA in file /root/.ssh/known_hosts:1
+debug3: load_hostkeys: loaded 1 keys
+debug3: order_hostkeyalgs: prefer hostkeyalgs: ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug2: kex_parse_kexinit: curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+debug2: kex_parse_kexinit: ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ssh-dss-cert-v01@openssh.com,ssh-rsa-cert-v00@openssh.com,ssh-dss-cert-v00@openssh.com,ssh-ed25519,ssh-rsa,ssh-dss
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: zlib@openssh.com,zlib,none
+debug2: kex_parse_kexinit: zlib@openssh.com,zlib,none
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: first_kex_follows 0 
+debug2: kex_parse_kexinit: reserved 0 
+debug2: kex_parse_kexinit: curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+debug2: kex_parse_kexinit: ssh-rsa,ssh-dss,ecdsa-sha2-nistp256,ssh-ed25519
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: none,zlib@openssh.com
+debug2: kex_parse_kexinit: none,zlib@openssh.com
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: first_kex_follows 0 
+debug2: kex_parse_kexinit: reserved 0 
+debug2: mac_setup: setup hmac-md5-etm@openssh.com
+debug1: kex: server->client aes128-ctr hmac-md5-etm@openssh.com zlib@openssh.com
+debug2: mac_setup: setup hmac-md5-etm@openssh.com
+debug1: kex: client->server aes128-ctr hmac-md5-etm@openssh.com zlib@openssh.com
+debug1: sending SSH2_MSG_KEX_ECDH_INIT
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ECDSA 8c:9e:70:c8:b2:bb:a1:c3:6b:fe:7f:0d:47:90:20:d1
+debug3: load_hostkeys: loading entries for host "192.168.0.11" from file "/root/.ssh/known_hosts"
+debug3: load_hostkeys: found key type ECDSA in file /root/.ssh/known_hosts:1
+debug3: load_hostkeys: loaded 1 keys
+debug1: Host '192.168.0.11' is known and matches the ECDSA host key.
+debug1: Found key in /root/.ssh/known_hosts:1
+debug1: ssh_ecdsa_verify: signature correct
+debug2: kex_derive_keys
+debug2: set_newkeys: mode 1
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug2: set_newkeys: mode 0
+debug1: SSH2_MSG_NEWKEYS received
+debug1: SSH2_MSG_SERVICE_REQUEST sent
+debug2: service_accept: ssh-userauth
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug2: key: /root/.ssh/id_rsa ((nil)),
+debug2: key: /root/.ssh/id_dsa ((nil)),
+debug2: key: /root/.ssh/id_ecdsa ((nil)),
+debug2: key: /root/.ssh/id_ed25519 ((nil)),
+debug1: Authentications that can continue: publickey,password
+debug3: start over, passed a different list publickey,password
+debug3: preferred gssapi-with-mic,gssapi-keyex,hostbased,publickey
+debug3: authmethod_lookup publickey
+debug3: remaining preferred: ,gssapi-keyex,hostbased,publickey
+debug3: authmethod_is_enabled publickey
+debug1: Next authentication method: publickey
+debug1: Trying private key: /root/.ssh/id_rsa
+debug3: no such identity: /root/.ssh/id_rsa: No such file or directory
+debug1: Trying private key: /root/.ssh/id_dsa
+debug3: no such identity: /root/.ssh/id_dsa: No such file or directory
+debug1: Trying private key: /root/.ssh/id_ecdsa
+debug3: no such identity: /root/.ssh/id_ecdsa: No such file or directory
+debug1: Trying private key: /root/.ssh/id_ed25519
+debug3: no such identity: /root/.ssh/id_ed25519: No such file or directory
+debug2: we did not send a packet, disable method
+debug1: No more authentication methods to try.
+Permission denied (publickey,password).
+
+2016-09-26 12:16:51,682 p=8565 u=root |  
+2016-09-26 12:16:51,682 p=8565 u=root |  /usr/bin/ansible db -m ping -vvv
+2016-09-26 12:16:51,682 p=8565 u=root |  
+2016-09-26 12:16:51,714 p=8565 u=root |  <192.168.0.1> ESTABLISH CONNECTION FOR USER: root
+2016-09-26 12:16:51,714 p=8565 u=root |  <192.168.0.1> REMOTE_MODULE ping
+2016-09-26 12:16:51,715 p=8565 u=root |  <192.168.0.1> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/home/dima/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '192.168.0.1', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1474881411.72-99399469436320 && echo $HOME/.ansible/tmp/ansible-tmp-1474881411.72-99399469436320'"]
+2016-09-26 12:16:51,715 p=8565 u=root |  <192.168.0.3> ESTABLISH CONNECTION FOR USER: root
+2016-09-26 12:16:51,715 p=8565 u=root |  <192.168.0.2> ESTABLISH CONNECTION FOR USER: root
+2016-09-26 12:16:51,716 p=8565 u=root |  <192.168.0.3> REMOTE_MODULE ping
+2016-09-26 12:16:51,716 p=8565 u=root |  <192.168.0.2> REMOTE_MODULE ping
+2016-09-26 12:16:51,716 p=8565 u=root |  <192.168.0.2> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/home/dima/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '192.168.0.2', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1474881411.72-244831645963617 && echo $HOME/.ansible/tmp/ansible-tmp-1474881411.72-244831645963617'"]
+2016-09-26 12:16:51,717 p=8565 u=root |  <192.168.0.3> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/home/dima/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '192.168.0.3', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1474881411.72-125746121944905 && echo $HOME/.ansible/tmp/ansible-tmp-1474881411.72-125746121944905'"]
+2016-09-26 12:17:23,004 p=8565 u=root |  192.168.0.1 | FAILED => SSH encountered an unknown error during the connection. We recommend you re-run the command using -vvvv, which will enable SSH debugging output to help diagnose the issue
+2016-09-26 12:17:43,564 p=8565 u=root |  192.168.0.2 | FAILED => SSH encountered an unknown error during the connection. We recommend you re-run the command using -vvvv, which will enable SSH debugging output to help diagnose the issue
+2016-09-26 12:17:43,564 p=8565 u=root |  192.168.0.3 | FAILED => SSH encountered an unknown error during the connection. We recommend you re-run the command using -vvvv, which will enable SSH debugging output to help diagnose the issue
+2016-09-26 12:17:43,564 p=8565 u=root |  <192.168.0.4> ESTABLISH CONNECTION FOR USER: root
+2016-09-26 12:17:43,564 p=8565 u=root |  <192.168.0.4> REMOTE_MODULE ping
+2016-09-26 12:17:43,565 p=8565 u=root |  <192.168.0.4> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/home/dima/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '192.168.0.4', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1474881463.57-278537274122089 && echo $HOME/.ansible/tmp/ansible-tmp-1474881463.57-278537274122089'"]
+2016-09-26 12:17:43,565 p=8565 u=root |  <192.168.0.7> ESTABLISH CONNECTION FOR USER: root
+2016-09-26 12:17:43,565 p=8565 u=root |  <192.168.0.8> ESTABLISH CONNECTION FOR USER: root
+2016-09-26 12:17:43,565 p=8565 u=root |  <192.168.0.7> REMOTE_MODULE ping
+2016-09-26 12:17:43,566 p=8565 u=root |  <192.168.0.8> REMOTE_MODULE ping
+2016-09-26 12:17:43,566 p=8565 u=root |  <192.168.0.7> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/home/dima/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '192.168.0.7', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1474881463.57-218048455745016 && echo $HOME/.ansible/tmp/ansible-tmp-1474881463.57-218048455745016'"]
+2016-09-26 12:17:43,566 p=8565 u=root |  <192.168.0.8> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/home/dima/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '192.168.0.8', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1474881463.57-167653426287546 && echo $HOME/.ansible/tmp/ansible-tmp-1474881463.57-167653426287546'"]
+2016-09-26 12:18:00,689 p=8565 u=root |  <192.168.0.6> ESTABLISH CONNECTION FOR USER: root
+2016-09-26 12:18:00,689 p=8565 u=root |  192.168.0.4 | FAILED => SSH encountered an unknown error during the connection. We recommend you re-run the command using -vvvv, which will enable SSH debugging output to help diagnose the issue
+2016-09-26 12:18:00,690 p=8565 u=root |  <192.168.0.6> REMOTE_MODULE ping
+2016-09-26 12:18:00,690 p=8565 u=root |  <192.168.0.5> ESTABLISH CONNECTION FOR USER: root
+2016-09-26 12:18:00,690 p=8565 u=root |  <192.168.0.5> REMOTE_MODULE ping
+2016-09-26 12:18:00,690 p=8565 u=root |  <192.168.0.6> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/home/dima/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '192.168.0.6', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1474881480.69-2346740942442 && echo $HOME/.ansible/tmp/ansible-tmp-1474881480.69-2346740942442'"]
+2016-09-26 12:18:00,691 p=8565 u=root |  <192.168.0.5> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/home/dima/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '192.168.0.5', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1474881480.69-67274094692878 && echo $HOME/.ansible/tmp/ansible-tmp-1474881480.69-67274094692878'"]
+2016-09-26 12:18:06,691 p=8565 u=root |  192.168.0.8 | FAILED => SSH encountered an unknown error during the connection. We recommend you re-run the command using -vvvv, which will enable SSH debugging output to help diagnose the issue
+2016-09-26 12:18:09,695 p=8565 u=root |  192.168.0.7 | FAILED => SSH encountered an unknown error during the connection. We recommend you re-run the command using -vvvv, which will enable SSH debugging output to help diagnose the issue
+2016-09-26 12:18:09,696 p=8565 u=root |  192.168.0.6 | FAILED => SSH encountered an unknown error during the connection. We recommend you re-run the command using -vvvv, which will enable SSH debugging output to help diagnose the issue
+2016-09-26 12:18:12,699 p=8565 u=root |  192.168.0.5 | FAILED => SSH encountered an unknown error during the connection. We recommend you re-run the command using -vvvv, which will enable SSH debugging output to help diagnose the issue
+2016-09-26 12:18:12,700 p=8565 u=root |  <192.168.0.9> ESTABLISH CONNECTION FOR USER: root
+2016-09-26 12:18:12,700 p=8565 u=root |  <192.168.0.9> REMOTE_MODULE ping
+2016-09-26 12:18:12,701 p=8565 u=root |  <192.168.0.9> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/home/dima/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '192.168.0.9', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1474881492.7-37463174453279 && echo $HOME/.ansible/tmp/ansible-tmp-1474881492.7-37463174453279'"]
+2016-09-26 12:18:15,703 p=8565 u=root |  <192.168.0.10> ESTABLISH CONNECTION FOR USER: root
+2016-09-26 12:18:15,703 p=8565 u=root |  192.168.0.9 | FAILED => SSH encountered an unknown error during the connection. We recommend you re-run the command using -vvvv, which will enable SSH debugging output to help diagnose the issue
+2016-09-26 12:18:15,704 p=8565 u=root |  <192.168.0.10> REMOTE_MODULE ping
+2016-09-26 12:18:15,704 p=8565 u=root |  <192.168.0.10> EXEC ['ssh', '-C', '-tt', '-q', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/home/dima/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '192.168.0.10', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1474881495.7-223197554931990 && echo $HOME/.ansible/tmp/ansible-tmp-1474881495.7-223197554931990'"]
+2016-09-26 12:18:18,707 p=8565 u=root |  192.168.0.10 | FAILED => SSH encountered an unknown error during the connection. We recommend you re-run the command using -vvvv, which will enable SSH debugging output to help diagnose the issue
+2016-09-26 12:44:16,555 p=8767 u=dima |  
+2016-09-26 12:44:16,555 p=8767 u=dima |  /usr/bin/ansible apps -m ping -vvvv
+2016-09-26 12:44:16,555 p=8767 u=dima |  
+2016-09-26 12:44:16,563 p=8767 u=dima |  <192.168.0.11> ESTABLISH CONNECTION FOR USER: dima
+2016-09-26 12:44:16,563 p=8767 u=dima |  <192.168.0.11> REMOTE_MODULE ping
+2016-09-26 12:44:16,564 p=8767 u=dima |  <192.168.0.11> EXEC ['ssh', '-C', '-tt', '-vvv', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/home/dima/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '192.168.0.11', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1474883056.56-126870204555998 && chmod a+rx $HOME/.ansible/tmp/ansible-tmp-1474883056.56-126870204555998 && echo $HOME/.ansible/tmp/ansible-tmp-1474883056.56-126870204555998'"]
+2016-09-26 12:44:36,643 p=8767 u=dima |  192.168.0.11 | FAILED => SSH encountered an unknown error. The output was:
+OpenSSH_6.6.1, OpenSSL 1.0.1f 6 Jan 2014
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: auto-mux: Trying existing master
+debug1: Control socket "/home/dima/.ansible/cp/ansible-ssh-192.168.0.11-22-dima" does not exist
+debug2: ssh_connect: needpriv 0
+debug1: Connecting to 192.168.0.11 [192.168.0.11] port 22.
+debug2: fd 3 setting O_NONBLOCK
+debug1: fd 3 clearing O_NONBLOCK
+debug1: Connection established.
+debug3: timeout: 10000 ms remain after connect
+debug3: Incorrect RSA1 identifier
+debug3: Could not load "/home/dima/.ssh/id_rsa" as a RSA1 public key
+debug1: identity file /home/dima/.ssh/id_rsa type 1
+debug1: identity file /home/dima/.ssh/id_rsa-cert type -1
+debug1: identity file /home/dima/.ssh/id_dsa type -1
+debug1: identity file /home/dima/.ssh/id_dsa-cert type -1
+debug1: identity file /home/dima/.ssh/id_ecdsa type -1
+debug1: identity file /home/dima/.ssh/id_ecdsa-cert type -1
+debug1: identity file /home/dima/.ssh/id_ed25519 type -1
+debug1: identity file /home/dima/.ssh/id_ed25519-cert type -1
+debug1: Enabling compatibility mode for protocol 2.0
+debug1: Local version string SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8
+debug1: Remote protocol version 2.0, remote software version OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8
+debug1: match: OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8 pat OpenSSH_6.6.1* compat 0x04000000
+debug2: fd 3 setting O_NONBLOCK
+debug3: load_hostkeys: loading entries for host "192.168.0.11" from file "/home/dima/.ssh/known_hosts"
+debug3: load_hostkeys: found key type ECDSA in file /home/dima/.ssh/known_hosts:3
+debug3: load_hostkeys: loaded 1 keys
+debug3: order_hostkeyalgs: prefer hostkeyalgs: ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug2: kex_parse_kexinit: curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+debug2: kex_parse_kexinit: ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ssh-dss-cert-v01@openssh.com,ssh-rsa-cert-v00@openssh.com,ssh-dss-cert-v00@openssh.com,ssh-ed25519,ssh-rsa,ssh-dss
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: zlib@openssh.com,zlib,none
+debug2: kex_parse_kexinit: zlib@openssh.com,zlib,none
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: first_kex_follows 0 
+debug2: kex_parse_kexinit: reserved 0 
+debug2: kex_parse_kexinit: curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+debug2: kex_parse_kexinit: ssh-rsa,ssh-dss,ecdsa-sha2-nistp256,ssh-ed25519
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: none,zlib@openssh.com
+debug2: kex_parse_kexinit: none,zlib@openssh.com
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: first_kex_follows 0 
+debug2: kex_parse_kexinit: reserved 0 
+debug2: mac_setup: setup hmac-md5-etm@openssh.com
+debug1: kex: server->client aes128-ctr hmac-md5-etm@openssh.com zlib@openssh.com
+debug2: mac_setup: setup hmac-md5-etm@openssh.com
+debug1: kex: client->server aes128-ctr hmac-md5-etm@openssh.com zlib@openssh.com
+debug1: sending SSH2_MSG_KEX_ECDH_INIT
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ECDSA 8c:9e:70:c8:b2:bb:a1:c3:6b:fe:7f:0d:47:90:20:d1
+debug3: load_hostkeys: loading entries for host "192.168.0.11" from file "/home/dima/.ssh/known_hosts"
+debug3: load_hostkeys: found key type ECDSA in file /home/dima/.ssh/known_hosts:3
+debug3: load_hostkeys: loaded 1 keys
+debug1: Host '192.168.0.11' is known and matches the ECDSA host key.
+debug1: Found key in /home/dima/.ssh/known_hosts:3
+debug1: ssh_ecdsa_verify: signature correct
+debug2: kex_derive_keys
+debug2: set_newkeys: mode 1
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug2: set_newkeys: mode 0
+debug1: SSH2_MSG_NEWKEYS received
+debug1: SSH2_MSG_SERVICE_REQUEST sent
+debug2: service_accept: ssh-userauth
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug2: key: /home/dima/.ssh/id_rsa (0x55e48b2a1b40),
+debug2: key: dima@dima-All-Series (0x55e48b2a7810),
+debug2: key: /home/dima/.ssh/id_dsa ((nil)),
+debug2: key: /home/dima/.ssh/id_ecdsa ((nil)),
+debug2: key: /home/dima/.ssh/id_ed25519 ((nil)),
+debug1: Authentications that can continue: publickey,password
+debug3: start over, passed a different list publickey,password
+debug3: preferred gssapi-with-mic,gssapi-keyex,hostbased,publickey
+debug3: authmethod_lookup publickey
+debug3: remaining preferred: ,gssapi-keyex,hostbased,publickey
+debug3: authmethod_is_enabled publickey
+debug1: Next authentication method: publickey
+debug1: Offering RSA public key: /home/dima/.ssh/id_rsa
+debug3: send_pubkey_test
+debug2: we sent a publickey packet, wait for reply
+debug1: Authentications that can continue: publickey,password
+debug1: Offering RSA public key: dima@dima-All-Series
+debug3: send_pubkey_test
+debug2: we sent a publickey packet, wait for reply
+debug1: Authentications that can continue: publickey,password
+debug1: Trying private key: /home/dima/.ssh/id_dsa
+debug3: no such identity: /home/dima/.ssh/id_dsa: No such file or directory
+debug1: Trying private key: /home/dima/.ssh/id_ecdsa
+debug3: no such identity: /home/dima/.ssh/id_ecdsa: No such file or directory
+debug1: Trying private key: /home/dima/.ssh/id_ed25519
+debug3: no such identity: /home/dima/.ssh/id_ed25519: No such file or directory
+debug2: we did not send a packet, disable method
+debug1: No more authentication methods to try.
+Permission denied (publickey,password).
+
+2016-09-26 13:36:37,713 p=10422 u=dima |  
+2016-09-26 13:36:37,713 p=10422 u=dima |  /usr/bin/ansible apps -m ping
+2016-09-26 13:36:37,713 p=10422 u=dima |  
+2016-09-26 13:36:57,801 p=10422 u=dima |  192.168.0.11 | FAILED => SSH encountered an unknown error during the connection. We recommend you re-run the command using -vvvv, which will enable SSH debugging output to help diagnose the issue
+2016-09-26 13:37:06,590 p=10426 u=dima |  
+2016-09-26 13:37:06,590 p=10426 u=dima |  /usr/bin/ansible apps -m ping -vvvv
+2016-09-26 13:37:06,590 p=10426 u=dima |  
+2016-09-26 13:37:06,599 p=10426 u=dima |  <192.168.0.11> ESTABLISH CONNECTION FOR USER: dima
+2016-09-26 13:37:06,599 p=10426 u=dima |  <192.168.0.11> REMOTE_MODULE ping
+2016-09-26 13:37:06,600 p=10426 u=dima |  <192.168.0.11> EXEC ['ssh', '-C', '-tt', '-vvv', '-o', 'ControlMaster=auto', '-o', 'ControlPersist=60s', '-o', 'ControlPath=/home/dima/.ansible/cp/ansible-ssh-%h-%p-%r', '-o', 'KbdInteractiveAuthentication=no', '-o', 'PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey', '-o', 'PasswordAuthentication=no', '-o', 'ConnectTimeout=10', '192.168.0.11', "/bin/sh -c 'mkdir -p $HOME/.ansible/tmp/ansible-tmp-1474886226.6-39164886970988 && chmod a+rx $HOME/.ansible/tmp/ansible-tmp-1474886226.6-39164886970988 && echo $HOME/.ansible/tmp/ansible-tmp-1474886226.6-39164886970988'"]
+2016-09-26 13:37:26,681 p=10426 u=dima |  192.168.0.11 | FAILED => SSH encountered an unknown error. The output was:
+OpenSSH_6.6.1, OpenSSL 1.0.1f 6 Jan 2014
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: auto-mux: Trying existing master
+debug1: Control socket "/home/dima/.ansible/cp/ansible-ssh-192.168.0.11-22-dima" does not exist
+debug2: ssh_connect: needpriv 0
+debug1: Connecting to 192.168.0.11 [192.168.0.11] port 22.
+debug2: fd 3 setting O_NONBLOCK
+debug1: fd 3 clearing O_NONBLOCK
+debug1: Connection established.
+debug3: timeout: 10000 ms remain after connect
+debug3: Incorrect RSA1 identifier
+debug3: Could not load "/home/dima/.ssh/id_rsa" as a RSA1 public key
+debug1: identity file /home/dima/.ssh/id_rsa type 1
+debug1: identity file /home/dima/.ssh/id_rsa-cert type -1
+debug1: identity file /home/dima/.ssh/id_dsa type -1
+debug1: identity file /home/dima/.ssh/id_dsa-cert type -1
+debug1: identity file /home/dima/.ssh/id_ecdsa type -1
+debug1: identity file /home/dima/.ssh/id_ecdsa-cert type -1
+debug1: identity file /home/dima/.ssh/id_ed25519 type -1
+debug1: identity file /home/dima/.ssh/id_ed25519-cert type -1
+debug1: Enabling compatibility mode for protocol 2.0
+debug1: Local version string SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8
+debug1: Remote protocol version 2.0, remote software version OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8
+debug1: match: OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.8 pat OpenSSH_6.6.1* compat 0x04000000
+debug2: fd 3 setting O_NONBLOCK
+debug3: load_hostkeys: loading entries for host "192.168.0.11" from file "/home/dima/.ssh/known_hosts"
+debug3: load_hostkeys: found key type ECDSA in file /home/dima/.ssh/known_hosts:3
+debug3: load_hostkeys: loaded 1 keys
+debug3: order_hostkeyalgs: prefer hostkeyalgs: ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug2: kex_parse_kexinit: curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+debug2: kex_parse_kexinit: ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ssh-dss-cert-v01@openssh.com,ssh-rsa-cert-v00@openssh.com,ssh-dss-cert-v00@openssh.com,ssh-ed25519,ssh-rsa,ssh-dss
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: zlib@openssh.com,zlib,none
+debug2: kex_parse_kexinit: zlib@openssh.com,zlib,none
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: first_kex_follows 0 
+debug2: kex_parse_kexinit: reserved 0 
+debug2: kex_parse_kexinit: curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+debug2: kex_parse_kexinit: ssh-rsa,ssh-dss,ecdsa-sha2-nistp256,ssh-ed25519
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc,arcfour,rijndael-cbc@lysator.liu.se
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-ripemd160-etm@openssh.com,hmac-sha1-96-etm@openssh.com,hmac-md5-96-etm@openssh.com,hmac-md5,hmac-sha1,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-ripemd160,hmac-ripemd160@openssh.com,hmac-sha1-96,hmac-md5-96
+debug2: kex_parse_kexinit: none,zlib@openssh.com
+debug2: kex_parse_kexinit: none,zlib@openssh.com
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: 
+debug2: kex_parse_kexinit: first_kex_follows 0 
+debug2: kex_parse_kexinit: reserved 0 
+debug2: mac_setup: setup hmac-md5-etm@openssh.com
+debug1: kex: server->client aes128-ctr hmac-md5-etm@openssh.com zlib@openssh.com
+debug2: mac_setup: setup hmac-md5-etm@openssh.com
+debug1: kex: client->server aes128-ctr hmac-md5-etm@openssh.com zlib@openssh.com
+debug1: sending SSH2_MSG_KEX_ECDH_INIT
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ECDSA 8c:9e:70:c8:b2:bb:a1:c3:6b:fe:7f:0d:47:90:20:d1
+debug3: load_hostkeys: loading entries for host "192.168.0.11" from file "/home/dima/.ssh/known_hosts"
+debug3: load_hostkeys: found key type ECDSA in file /home/dima/.ssh/known_hosts:3
+debug3: load_hostkeys: loaded 1 keys
+debug1: Host '192.168.0.11' is known and matches the ECDSA host key.
+debug1: Found key in /home/dima/.ssh/known_hosts:3
+debug1: ssh_ecdsa_verify: signature correct
+debug2: kex_derive_keys
+debug2: set_newkeys: mode 1
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug2: set_newkeys: mode 0
+debug1: SSH2_MSG_NEWKEYS received
+debug1: SSH2_MSG_SERVICE_REQUEST sent
+debug2: service_accept: ssh-userauth
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug2: key: /home/dima/.ssh/id_rsa (0x55e12fa45b40),
+debug2: key: dima@dima-All-Series (0x55e12fa4b810),
+debug2: key: /home/dima/.ssh/id_dsa ((nil)),
+debug2: key: /home/dima/.ssh/id_ecdsa ((nil)),
+debug2: key: /home/dima/.ssh/id_ed25519 ((nil)),
+debug1: Authentications that can continue: publickey,password
+debug3: start over, passed a different list publickey,password
+debug3: preferred gssapi-with-mic,gssapi-keyex,hostbased,publickey
+debug3: authmethod_lookup publickey
+debug3: remaining preferred: ,gssapi-keyex,hostbased,publickey
+debug3: authmethod_is_enabled publickey
+debug1: Next authentication method: publickey
+debug1: Offering RSA public key: /home/dima/.ssh/id_rsa
+debug3: send_pubkey_test
+debug2: we sent a publickey packet, wait for reply
+debug1: Authentications that can continue: publickey,password
+debug1: Offering RSA public key: dima@dima-All-Series
+debug3: send_pubkey_test
+debug2: we sent a publickey packet, wait for reply
+debug1: Authentications that can continue: publickey,password
+debug1: Trying private key: /home/dima/.ssh/id_dsa
+debug3: no such identity: /home/dima/.ssh/id_dsa: No such file or directory
+debug1: Trying private key: /home/dima/.ssh/id_ecdsa
+debug3: no such identity: /home/dima/.ssh/id_ecdsa: No such file or directory
+debug1: Trying private key: /home/dima/.ssh/id_ed25519
+debug3: no such identity: /home/dima/.ssh/id_ed25519: No such file or directory
+debug2: we did not send a packet, disable method
+debug1: No more authentication methods to try.
+Permission denied (publickey,password).
+
+2016-09-26 14:00:52,367 p=10506 u=dima |  
+2016-09-26 14:00:52,367 p=10506 u=dima |  /usr/bin/ansible apps ping
+2016-09-26 14:00:52,367 p=10506 u=dima |  
+2016-09-26 14:01:26,678 p=10509 u=dima |  
+2016-09-26 14:01:26,678 p=10509 u=dima |  /usr/bin/ansible apps --private-key ping
+2016-09-26 14:01:26,678 p=10509 u=dima |  
+2016-09-26 14:01:26,681 p=10509 u=dima |  No argument passed to command module
+2016-09-26 14:02:54,144 p=10514 u=dima |  
+2016-09-26 14:02:54,144 p=10514 u=dima |  /usr/bin/ansible apps --private-key=/home/dima/.ssh/id_rsa ping
+2016-09-26 14:02:54,144 p=10514 u=dima |  
+2016-09-26 14:19:45,907 p=10560 u=dima |   
+2016-09-26 14:19:45,907 p=10560 u=dima |  /usr/bin/ansible-playbook scrins/nstall apps
+2016-09-26 14:19:45,907 p=10560 u=dima |   
+2016-09-26 14:19:45,909 p=10560 u=dima |  ERROR: the playbook: apps could not be found
+2016-09-26 14:22:38,259 p=10572 u=dima |   
+2016-09-26 14:22:38,259 p=10572 u=dima |  /usr/bin/ansible-playbook scrins/nstall -l apps
+2016-09-26 14:22:38,259 p=10572 u=dima |   
+2016-09-26 14:22:38,265 p=10572 u=dima |  PLAY [experiments] ************************************************************ 
+2016-09-26 14:22:38,266 p=10572 u=dima |  skipping: no hosts matched
+2016-09-26 14:22:38,266 p=10572 u=dima |  PLAY RECAP ******************************************************************** 
+2016-09-26 14:29:20,699 p=10581 u=dima |   
+2016-09-26 14:29:20,699 p=10581 u=dima |  /usr/bin/ansible-playbook
+2016-09-26 14:29:20,699 p=10581 u=dima |   
+2016-10-07 10:59:48,849 p=25263 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-07 10:59:48,882 p=25263 u=dima |  PLAY [apps] ********************************************************************
+2016-10-07 10:59:48,897 p=25263 u=dima |  TASK [setup] *******************************************************************
+2016-10-07 11:00:10,402 p=25263 u=dima |  ok: [192.168.0.11]
+2016-10-07 11:00:10,404 p=25263 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-07 11:00:10,870 p=25263 u=dima |  fatal: [192.168.0.11]: FAILED! => {"changed": false, "failed": true, "msg": "Failed to lock apt for exclusive operation"}
+2016-10-07 11:00:10,871 p=25263 u=dima |  	to retry, use: --limit @/home/dima/virts/ansible/playbooks/apps.retry
+
+2016-10-07 11:00:10,871 p=25263 u=dima |  PLAY RECAP *********************************************************************
+2016-10-07 11:00:10,871 p=25263 u=dima |  192.168.0.11               : ok=1    changed=0    unreachable=0    failed=1   
+2016-10-07 11:01:31,908 p=25300 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-07 11:01:31,931 p=25300 u=dima |  PLAY [apps] ********************************************************************
+2016-10-07 11:01:31,941 p=25300 u=dima |  TASK [setup] *******************************************************************
+2016-10-07 11:01:51,748 p=25300 u=dima |  ok: [192.168.0.11]
+2016-10-07 11:01:51,751 p=25300 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-07 11:01:52,205 p=25300 u=dima |  fatal: [192.168.0.11]: FAILED! => {"changed": false, "failed": true, "msg": "Failed to lock apt for exclusive operation"}
+2016-10-07 11:01:52,207 p=25300 u=dima |  	to retry, use: --limit @/home/dima/virts/ansible/playbooks/apps.retry
+
+2016-10-07 11:01:52,207 p=25300 u=dima |  PLAY RECAP *********************************************************************
+2016-10-07 11:01:52,207 p=25300 u=dima |  192.168.0.11               : ok=1    changed=0    unreachable=0    failed=1   
+2016-10-07 11:02:55,229 p=25338 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-07 11:02:55,254 p=25338 u=dima |  PLAY [apps] ********************************************************************
+2016-10-07 11:02:55,263 p=25338 u=dima |  TASK [setup] *******************************************************************
+2016-10-07 11:03:16,806 p=25338 u=dima |  ok: [192.168.0.11]
+2016-10-07 11:03:16,808 p=25338 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-07 11:03:17,370 p=25338 u=dima |  fatal: [192.168.0.11]: FAILED! => {"changed": false, "failed": true, "msg": "Failed to lock apt for exclusive operation"}
+2016-10-07 11:03:17,371 p=25338 u=dima |  	to retry, use: --limit @/home/dima/virts/ansible/playbooks/apps.retry
+
+2016-10-07 11:03:17,371 p=25338 u=dima |  PLAY RECAP *********************************************************************
+2016-10-07 11:03:17,371 p=25338 u=dima |  192.168.0.11               : ok=1    changed=0    unreachable=0    failed=1   
+2016-10-07 11:04:15,565 p=25386 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-07 11:04:15,589 p=25386 u=dima |  PLAY [apps] ********************************************************************
+2016-10-07 11:04:15,599 p=25386 u=dima |  TASK [setup] *******************************************************************
+2016-10-07 11:04:16,781 p=25386 u=dima |  ok: [192.168.0.11]
+2016-10-07 11:04:16,783 p=25386 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-07 11:04:30,275 p=25386 u=dima |  changed: [192.168.0.11]
+2016-10-07 11:04:30,280 p=25386 u=dima |  TASK [copy .bachrc] ************************************************************
+2016-10-07 11:04:30,289 p=25386 u=dima |  fatal: [192.168.0.11]: FAILED! => {"changed": false, "failed": true, "msg": "Unable to find '/templates/.bashrc' in expected paths."}
+2016-10-07 11:04:30,290 p=25386 u=dima |  	to retry, use: --limit @/home/dima/virts/ansible/playbooks/apps.retry
+
+2016-10-07 11:04:30,290 p=25386 u=dima |  PLAY RECAP *********************************************************************
+2016-10-07 11:04:30,290 p=25386 u=dima |  192.168.0.11               : ok=2    changed=1    unreachable=0    failed=1   
+2016-10-07 11:06:19,373 p=25431 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-07 11:06:19,399 p=25431 u=dima |  PLAY [apps] ********************************************************************
+2016-10-07 11:06:19,408 p=25431 u=dima |  TASK [setup] *******************************************************************
+2016-10-07 11:06:41,608 p=25431 u=dima |  ok: [192.168.0.11]
+2016-10-07 11:06:41,610 p=25431 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-07 11:06:42,055 p=25431 u=dima |  ok: [192.168.0.11]
+2016-10-07 11:06:42,057 p=25431 u=dima |  TASK [copy .bachrc] ************************************************************
+2016-10-07 11:06:42,401 p=25431 u=dima |  changed: [192.168.0.11]
+2016-10-07 11:06:42,402 p=25431 u=dima |  PLAY RECAP *********************************************************************
+2016-10-07 11:06:42,403 p=25431 u=dima |  192.168.0.11               : ok=3    changed=1    unreachable=0    failed=0   
+2016-10-07 11:11:46,597 p=25499 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-07 11:11:46,622 p=25499 u=dima |  PLAY [apps] ********************************************************************
+2016-10-07 11:11:46,631 p=25499 u=dima |  TASK [setup] *******************************************************************
+2016-10-07 11:12:08,086 p=25499 u=dima |  ok: [192.168.0.11]
+2016-10-07 11:12:08,089 p=25499 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-07 11:12:08,545 p=25499 u=dima |  ok: [192.168.0.11]
+2016-10-07 11:12:08,547 p=25499 u=dima |  TASK [copy .bachrc] ************************************************************
+2016-10-07 11:12:08,881 p=25499 u=dima |  ok: [192.168.0.11]
+2016-10-07 11:12:08,883 p=25499 u=dima |  TASK [apply .bashrc] ***********************************************************
+2016-10-07 11:12:09,057 p=25499 u=dima |  changed: [192.168.0.11]
+2016-10-07 11:12:09,058 p=25499 u=dima |  PLAY RECAP *********************************************************************
+2016-10-07 11:12:09,058 p=25499 u=dima |  192.168.0.11               : ok=4    changed=1    unreachable=0    failed=0   
+2016-10-07 11:16:16,951 p=25556 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-07 11:16:16,978 p=25556 u=dima |  PLAY [apps] ********************************************************************
+2016-10-07 11:16:16,988 p=25556 u=dima |  TASK [setup] *******************************************************************
+2016-10-07 11:16:38,428 p=25556 u=dima |  ok: [192.168.0.11]
+2016-10-07 11:16:38,430 p=25556 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-07 11:16:38,882 p=25556 u=dima |  ok: [192.168.0.11]
+2016-10-07 11:16:38,884 p=25556 u=dima |  TASK [copy .bachrc] ************************************************************
+2016-10-07 11:16:39,210 p=25556 u=dima |  ok: [192.168.0.11]
+2016-10-07 11:16:39,212 p=25556 u=dima |  TASK [apply .bashrc] ***********************************************************
+2016-10-07 11:16:39,384 p=25556 u=dima |  changed: [192.168.0.11]
+2016-10-07 11:16:39,386 p=25556 u=dima |  TASK [installing all packages] *************************************************
+2016-10-07 11:16:39,760 p=25556 u=dima |  failed: [192.168.0.11] (item=git-core) => {"failed": true, "item": "git-core", "msg": "No package matching '$item' is available"}
+2016-10-07 11:16:40,116 p=25556 u=dima |  failed: [192.168.0.11] (item=curl) => {"failed": true, "item": "curl", "msg": "No package matching '$item' is available"}
+2016-10-07 11:16:40,479 p=25556 u=dima |  failed: [192.168.0.11] (item=libssl-dev) => {"failed": true, "item": "libssl-dev", "msg": "No package matching '$item' is available"}
+2016-10-07 11:16:40,845 p=25556 u=dima |  failed: [192.168.0.11] (item=libreadline-dev) => {"failed": true, "item": "libreadline-dev", "msg": "No package matching '$item' is available"}
+2016-10-07 11:16:41,201 p=25556 u=dima |  failed: [192.168.0.11] (item=zlib1g-dev) => {"failed": true, "item": "zlib1g-dev", "msg": "No package matching '$item' is available"}
+2016-10-07 11:16:41,562 p=25556 u=dima |  failed: [192.168.0.11] (item=zlibc) => {"failed": true, "item": "zlibc", "msg": "No package matching '$item' is available"}
+2016-10-07 11:16:41,917 p=25556 u=dima |  failed: [192.168.0.11] (item=zlib1g) => {"failed": true, "item": "zlib1g", "msg": "No package matching '$item' is available"}
+2016-10-07 11:16:42,277 p=25556 u=dima |  failed: [192.168.0.11] (item=ruby-build) => {"failed": true, "item": "ruby-build", "msg": "No package matching '$item' is available"}
+2016-10-07 11:16:42,636 p=25556 u=dima |  failed: [192.168.0.11] (item=build-essential) => {"failed": true, "item": "build-essential", "msg": "No package matching '$item' is available"}
+2016-10-07 11:16:42,994 p=25556 u=dima |  failed: [192.168.0.11] (item=m4) => {"failed": true, "item": "m4", "msg": "No package matching '$item' is available"}
+2016-10-07 11:16:43,354 p=25556 u=dima |  failed: [192.168.0.11] (item=ruby-railties-3.2) => {"failed": true, "item": "ruby-railties-3.2", "msg": "No package matching '$item' is available"}
+2016-10-07 11:16:43,712 p=25556 u=dima |  failed: [192.168.0.11] (item=mysql-client) => {"failed": true, "item": "mysql-client", "msg": "No package matching '$item' is available"}
+2016-10-07 11:16:44,069 p=25556 u=dima |  failed: [192.168.0.11] (item=libmysqlclient-dev) => {"failed": true, "item": "libmysqlclient-dev", "msg": "No package matching '$item' is available"}
+2016-10-07 11:16:44,426 p=25556 u=dima |  failed: [192.168.0.11] (item=libcurl4-gnutls-dev) => {"failed": true, "item": "libcurl4-gnutls-dev", "msg": "No package matching '$item' is available"}
+2016-10-07 11:16:44,781 p=25556 u=dima |  failed: [192.168.0.11] (item=nodejs) => {"failed": true, "item": "nodejs", "msg": "No package matching '$item' is available"}
+2016-10-07 11:16:44,783 p=25556 u=dima |  	to retry, use: --limit @/home/dima/virts/ansible/playbooks/apps.retry
+
+2016-10-07 11:16:44,783 p=25556 u=dima |  PLAY RECAP *********************************************************************
+2016-10-07 11:16:44,783 p=25556 u=dima |  192.168.0.11               : ok=4    changed=1    unreachable=0    failed=1   
+2016-10-07 11:18:47,958 p=25689 u=dima |   [WARNING]: While constructing a mapping from
+/home/dima/virts/ansible/playbooks/apps.yml, line 34, column 5, found a
+duplicate dict key (apt). Using last defined value only.
+
+2016-10-07 11:18:47,977 p=25689 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-07 11:18:48,004 p=25689 u=dima |  PLAY [apps] ********************************************************************
+2016-10-07 11:18:48,013 p=25689 u=dima |  TASK [setup] *******************************************************************
+2016-10-07 11:19:09,513 p=25689 u=dima |  ok: [192.168.0.11]
+2016-10-07 11:19:09,516 p=25689 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-07 11:19:09,981 p=25689 u=dima |  ok: [192.168.0.11]
+2016-10-07 11:19:09,984 p=25689 u=dima |  TASK [copy .bachrc] ************************************************************
+2016-10-07 11:19:10,321 p=25689 u=dima |  ok: [192.168.0.11]
+2016-10-07 11:19:10,323 p=25689 u=dima |  TASK [apply .bashrc] ***********************************************************
+2016-10-07 11:19:10,500 p=25689 u=dima |  changed: [192.168.0.11]
+2016-10-07 11:19:10,502 p=25689 u=dima |  TASK [installing all packages] *************************************************
+2016-10-07 11:19:10,884 p=25689 u=dima |  failed: [192.168.0.11] (item=git-core) => {"failed": true, "item": "git-core", "msg": "No package matching '$item' is available"}
+2016-10-07 11:19:11,254 p=25689 u=dima |  failed: [192.168.0.11] (item=curl) => {"failed": true, "item": "curl", "msg": "No package matching '$item' is available"}
+2016-10-07 11:19:11,626 p=25689 u=dima |  failed: [192.168.0.11] (item=libssl-dev) => {"failed": true, "item": "libssl-dev", "msg": "No package matching '$item' is available"}
+2016-10-07 11:19:12,007 p=25689 u=dima |  failed: [192.168.0.11] (item=libreadline-dev) => {"failed": true, "item": "libreadline-dev", "msg": "No package matching '$item' is available"}
+2016-10-07 11:19:12,376 p=25689 u=dima |  failed: [192.168.0.11] (item=zlib1g-dev) => {"failed": true, "item": "zlib1g-dev", "msg": "No package matching '$item' is available"}
+2016-10-07 11:19:12,746 p=25689 u=dima |  failed: [192.168.0.11] (item=zlibc) => {"failed": true, "item": "zlibc", "msg": "No package matching '$item' is available"}
+2016-10-07 11:19:13,116 p=25689 u=dima |  failed: [192.168.0.11] (item=zlib1g) => {"failed": true, "item": "zlib1g", "msg": "No package matching '$item' is available"}
+2016-10-07 11:19:13,494 p=25689 u=dima |  failed: [192.168.0.11] (item=ruby-build) => {"failed": true, "item": "ruby-build", "msg": "No package matching '$item' is available"}
+2016-10-07 11:19:13,910 p=25689 u=dima |  failed: [192.168.0.11] (item=build-essential) => {"failed": true, "item": "build-essential", "msg": "No package matching '$item' is available"}
+2016-10-07 11:19:14,279 p=25689 u=dima |  failed: [192.168.0.11] (item=m4) => {"failed": true, "item": "m4", "msg": "No package matching '$item' is available"}
+2016-10-07 11:19:14,678 p=25689 u=dima |  failed: [192.168.0.11] (item=ruby-railties-3.2) => {"failed": true, "item": "ruby-railties-3.2", "msg": "No package matching '$item' is available"}
+2016-10-07 11:19:15,067 p=25689 u=dima |  failed: [192.168.0.11] (item=mysql-client) => {"failed": true, "item": "mysql-client", "msg": "No package matching '$item' is available"}
+2016-10-07 11:19:15,452 p=25689 u=dima |  failed: [192.168.0.11] (item=libmysqlclient-dev) => {"failed": true, "item": "libmysqlclient-dev", "msg": "No package matching '$item' is available"}
+2016-10-07 11:19:15,824 p=25689 u=dima |  failed: [192.168.0.11] (item=libcurl4-gnutls-dev) => {"failed": true, "item": "libcurl4-gnutls-dev", "msg": "No package matching '$item' is available"}
+2016-10-07 11:19:16,190 p=25689 u=dima |  failed: [192.168.0.11] (item=nodejs) => {"failed": true, "item": "nodejs", "msg": "No package matching '$item' is available"}
+2016-10-07 11:19:16,191 p=25689 u=dima |  	to retry, use: --limit @/home/dima/virts/ansible/playbooks/apps.retry
+
+2016-10-07 11:19:16,192 p=25689 u=dima |  PLAY RECAP *********************************************************************
+2016-10-07 11:19:16,192 p=25689 u=dima |  192.168.0.11               : ok=4    changed=1    unreachable=0    failed=1   
+2016-10-07 11:21:32,802 p=25828 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-07 11:21:32,829 p=25828 u=dima |  PLAY [apps] ********************************************************************
+2016-10-07 11:21:32,840 p=25828 u=dima |  TASK [setup] *******************************************************************
+2016-10-07 11:21:54,699 p=25828 u=dima |  ok: [192.168.0.11]
+2016-10-07 11:21:54,702 p=25828 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-07 11:21:55,290 p=25828 u=dima |  fatal: [192.168.0.11]: FAILED! => {"changed": false, "failed": true, "msg": "Failed to lock apt for exclusive operation"}
+2016-10-07 11:21:55,291 p=25828 u=dima |  	to retry, use: --limit @/home/dima/virts/ansible/playbooks/apps.retry
+
+2016-10-07 11:21:55,291 p=25828 u=dima |  PLAY RECAP *********************************************************************
+2016-10-07 11:21:55,291 p=25828 u=dima |  192.168.0.11               : ok=1    changed=0    unreachable=0    failed=1   
+2016-10-07 11:22:23,613 p=25874 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-07 11:22:23,641 p=25874 u=dima |  PLAY [apps] ********************************************************************
+2016-10-07 11:22:23,653 p=25874 u=dima |  TASK [setup] *******************************************************************
+2016-10-07 11:22:24,925 p=25874 u=dima |  ok: [192.168.0.11]
+2016-10-07 11:22:24,928 p=25874 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-07 11:22:35,135 p=25874 u=dima |  changed: [192.168.0.11]
+2016-10-07 11:22:35,137 p=25874 u=dima |  TASK [copy .bachrc] ************************************************************
+2016-10-07 11:22:35,477 p=25874 u=dima |  ok: [192.168.0.11]
+2016-10-07 11:22:35,479 p=25874 u=dima |  TASK [apply .bashrc] ***********************************************************
+2016-10-07 11:22:35,659 p=25874 u=dima |  changed: [192.168.0.11]
+2016-10-07 11:22:35,661 p=25874 u=dima |  TASK [installing all packages] *************************************************
+2016-10-07 11:22:36,064 p=25874 u=dima |  failed: [192.168.0.11] (item=git-core) => {"failed": true, "item": "git-core", "msg": "No package matching '$item' is available"}
+2016-10-07 11:22:36,455 p=25874 u=dima |  failed: [192.168.0.11] (item=curl) => {"failed": true, "item": "curl", "msg": "No package matching '$item' is available"}
+2016-10-07 11:22:36,847 p=25874 u=dima |  failed: [192.168.0.11] (item=libssl-dev) => {"failed": true, "item": "libssl-dev", "msg": "No package matching '$item' is available"}
+2016-10-07 11:22:37,235 p=25874 u=dima |  failed: [192.168.0.11] (item=libreadline-dev) => {"failed": true, "item": "libreadline-dev", "msg": "No package matching '$item' is available"}
+2016-10-07 11:22:37,627 p=25874 u=dima |  failed: [192.168.0.11] (item=zlib1g-dev) => {"failed": true, "item": "zlib1g-dev", "msg": "No package matching '$item' is available"}
+2016-10-07 11:22:38,021 p=25874 u=dima |  failed: [192.168.0.11] (item=zlibc) => {"failed": true, "item": "zlibc", "msg": "No package matching '$item' is available"}
+2016-10-07 11:22:38,411 p=25874 u=dima |  failed: [192.168.0.11] (item=zlib1g) => {"failed": true, "item": "zlib1g", "msg": "No package matching '$item' is available"}
+2016-10-07 11:22:38,800 p=25874 u=dima |  failed: [192.168.0.11] (item=ruby-build) => {"failed": true, "item": "ruby-build", "msg": "No package matching '$item' is available"}
+2016-10-07 11:22:39,183 p=25874 u=dima |  failed: [192.168.0.11] (item=build-essential) => {"failed": true, "item": "build-essential", "msg": "No package matching '$item' is available"}
+2016-10-07 11:22:39,578 p=25874 u=dima |  failed: [192.168.0.11] (item=m4) => {"failed": true, "item": "m4", "msg": "No package matching '$item' is available"}
+2016-10-07 11:22:39,970 p=25874 u=dima |  failed: [192.168.0.11] (item=ruby-railties-3.2) => {"failed": true, "item": "ruby-railties-3.2", "msg": "No package matching '$item' is available"}
+2016-10-07 11:22:40,368 p=25874 u=dima |  failed: [192.168.0.11] (item=mysql-client) => {"failed": true, "item": "mysql-client", "msg": "No package matching '$item' is available"}
+2016-10-07 11:22:40,762 p=25874 u=dima |  failed: [192.168.0.11] (item=libmysqlclient-dev) => {"failed": true, "item": "libmysqlclient-dev", "msg": "No package matching '$item' is available"}
+2016-10-07 11:22:41,160 p=25874 u=dima |  failed: [192.168.0.11] (item=libcurl4-gnutls-dev) => {"failed": true, "item": "libcurl4-gnutls-dev", "msg": "No package matching '$item' is available"}
+2016-10-07 11:22:41,555 p=25874 u=dima |  failed: [192.168.0.11] (item=nodejs) => {"failed": true, "item": "nodejs", "msg": "No package matching '$item' is available"}
+2016-10-07 11:22:41,557 p=25874 u=dima |  	to retry, use: --limit @/home/dima/virts/ansible/playbooks/apps.retry
+
+2016-10-07 11:22:41,557 p=25874 u=dima |  PLAY RECAP *********************************************************************
+2016-10-07 11:22:41,557 p=25874 u=dima |  192.168.0.11               : ok=4    changed=2    unreachable=0    failed=1   
+2016-10-07 11:23:34,832 p=26000 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-07 11:23:34,860 p=26000 u=dima |  PLAY [apps] ********************************************************************
+2016-10-07 11:23:34,870 p=26000 u=dima |  TASK [setup] *******************************************************************
+2016-10-07 11:23:36,145 p=26000 u=dima |  ok: [192.168.0.11]
+2016-10-07 11:23:36,148 p=26000 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-07 11:23:47,148 p=26000 u=dima |  changed: [192.168.0.11]
+2016-10-07 11:23:47,150 p=26000 u=dima |  TASK [copy .bachrc] ************************************************************
+2016-10-07 11:23:47,500 p=26000 u=dima |  ok: [192.168.0.11]
+2016-10-07 11:23:47,502 p=26000 u=dima |  TASK [apply .bashrc] ***********************************************************
+2016-10-07 11:23:47,617 p=26000 u=dima |  changed: [192.168.0.11]
+2016-10-07 11:23:47,619 p=26000 u=dima |  TASK [installing all packages] *************************************************
+2016-10-07 11:23:48,097 p=26000 u=dima |  failed: [192.168.0.11] (item=git-core) => {"failed": true, "item": "git-core", "msg": "No package matching '$item' is available"}
+2016-10-07 11:23:48,488 p=26000 u=dima |  failed: [192.168.0.11] (item=curl) => {"failed": true, "item": "curl", "msg": "No package matching '$item' is available"}
+2016-10-07 11:23:48,874 p=26000 u=dima |  failed: [192.168.0.11] (item=libssl-dev) => {"failed": true, "item": "libssl-dev", "msg": "No package matching '$item' is available"}
+2016-10-07 11:23:49,266 p=26000 u=dima |  failed: [192.168.0.11] (item=libreadline-dev) => {"failed": true, "item": "libreadline-dev", "msg": "No package matching '$item' is available"}
+2016-10-07 11:23:49,661 p=26000 u=dima |  failed: [192.168.0.11] (item=zlib1g-dev) => {"failed": true, "item": "zlib1g-dev", "msg": "No package matching '$item' is available"}
+2016-10-07 11:23:50,049 p=26000 u=dima |  failed: [192.168.0.11] (item=zlibc) => {"failed": true, "item": "zlibc", "msg": "No package matching '$item' is available"}
+2016-10-07 11:23:50,428 p=26000 u=dima |  failed: [192.168.0.11] (item=zlib1g) => {"failed": true, "item": "zlib1g", "msg": "No package matching '$item' is available"}
+2016-10-07 11:23:50,822 p=26000 u=dima |  failed: [192.168.0.11] (item=ruby-build) => {"failed": true, "item": "ruby-build", "msg": "No package matching '$item' is available"}
+2016-10-07 11:23:51,202 p=26000 u=dima |  failed: [192.168.0.11] (item=build-essential) => {"failed": true, "item": "build-essential", "msg": "No package matching '$item' is available"}
+2016-10-07 11:23:51,591 p=26000 u=dima |  failed: [192.168.0.11] (item=m4) => {"failed": true, "item": "m4", "msg": "No package matching '$item' is available"}
+2016-10-07 11:23:51,985 p=26000 u=dima |  failed: [192.168.0.11] (item=ruby-railties-3.2) => {"failed": true, "item": "ruby-railties-3.2", "msg": "No package matching '$item' is available"}
+2016-10-07 11:23:52,376 p=26000 u=dima |  failed: [192.168.0.11] (item=mysql-client) => {"failed": true, "item": "mysql-client", "msg": "No package matching '$item' is available"}
+2016-10-07 11:23:52,774 p=26000 u=dima |  failed: [192.168.0.11] (item=libmysqlclient-dev) => {"failed": true, "item": "libmysqlclient-dev", "msg": "No package matching '$item' is available"}
+2016-10-07 11:23:53,156 p=26000 u=dima |  failed: [192.168.0.11] (item=libcurl4-gnutls-dev) => {"failed": true, "item": "libcurl4-gnutls-dev", "msg": "No package matching '$item' is available"}
+2016-10-07 11:23:53,547 p=26000 u=dima |  failed: [192.168.0.11] (item=nodejs) => {"failed": true, "item": "nodejs", "msg": "No package matching '$item' is available"}
+2016-10-07 11:23:53,548 p=26000 u=dima |  	to retry, use: --limit @/home/dima/virts/ansible/playbooks/apps.retry
+
+2016-10-07 11:23:53,548 p=26000 u=dima |  PLAY RECAP *********************************************************************
+2016-10-07 11:23:53,548 p=26000 u=dima |  192.168.0.11               : ok=4    changed=2    unreachable=0    failed=1   
+2016-10-07 11:26:33,810 p=26138 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-07 11:26:33,837 p=26138 u=dima |  PLAY [apps] ********************************************************************
+2016-10-07 11:26:33,847 p=26138 u=dima |  TASK [setup] *******************************************************************
+2016-10-07 11:26:55,440 p=26138 u=dima |  ok: [192.168.0.11]
+2016-10-07 11:26:55,443 p=26138 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-07 11:27:06,412 p=26138 u=dima |  changed: [192.168.0.11]
+2016-10-07 11:27:06,415 p=26138 u=dima |  TASK [copy .bachrc] ************************************************************
+2016-10-07 11:27:06,764 p=26138 u=dima |  ok: [192.168.0.11]
+2016-10-07 11:27:06,766 p=26138 u=dima |  TASK [apply .bashrc] ***********************************************************
+2016-10-07 11:27:06,880 p=26138 u=dima |  changed: [192.168.0.11]
+2016-10-07 11:27:06,882 p=26138 u=dima |  TASK [installing all packages] *************************************************
+2016-10-07 11:27:45,505 p=26138 u=dima |  changed: [192.168.0.11] => (item=[u'git-core', u'curl', u'libssl-dev', u'libreadline-dev', u'zlib1g-dev', u'zlibc', u'zlib1g', u'ruby-build', u'build-essential', u'm4', u'ruby-railties-3.2', u'mysql-client', u'libmysqlclient-dev', u'libcurl4-gnutls-dev', u'nodejs'])
+2016-10-07 11:27:45,507 p=26138 u=dima |  TASK [Install rbenv] ***********************************************************
+2016-10-07 11:28:12,382 p=26138 u=dima |  changed: [192.168.0.11]
+2016-10-07 11:28:12,384 p=26138 u=dima |  TASK [Install ruby] ************************************************************
+2016-10-07 11:33:19,117 p=26138 u=dima |  changed: [192.168.0.11]
+2016-10-07 11:33:19,118 p=26138 u=dima |  TASK [set ruby global] *********************************************************
+2016-10-07 11:33:19,402 p=26138 u=dima |  changed: [192.168.0.11]
+2016-10-07 11:33:19,403 p=26138 u=dima |  PLAY RECAP *********************************************************************
+2016-10-07 11:33:19,403 p=26138 u=dima |  192.168.0.11               : ok=8    changed=6    unreachable=0    failed=0   
+2016-10-07 12:01:45,329 p=26400 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-07 12:01:45,356 p=26400 u=dima |  PLAY [apps] ********************************************************************
+2016-10-07 12:01:45,367 p=26400 u=dima |  TASK [setup] *******************************************************************
+2016-10-07 12:02:07,215 p=26400 u=dima |  ok: [192.168.0.11]
+2016-10-07 12:02:07,217 p=26400 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-07 12:02:19,976 p=26400 u=dima |  changed: [192.168.0.11]
+2016-10-07 12:02:19,978 p=26400 u=dima |  TASK [copy .bachrc] ************************************************************
+2016-10-07 12:02:20,624 p=26400 u=dima |  ok: [192.168.0.11]
+2016-10-07 12:02:20,625 p=26400 u=dima |  TASK [apply .bashrc] ***********************************************************
+2016-10-07 12:02:20,926 p=26400 u=dima |  changed: [192.168.0.11]
+2016-10-07 12:02:20,928 p=26400 u=dima |  TASK [installing all packages] *************************************************
+2016-10-07 12:02:21,610 p=26400 u=dima |  ok: [192.168.0.11] => (item=[u'git-core', u'curl', u'libssl-dev', u'libreadline-dev', u'zlib1g-dev', u'zlibc', u'zlib1g', u'ruby-build', u'build-essential', u'm4', u'ruby-railties-3.2', u'mysql-client', u'libmysqlclient-dev', u'libcurl4-gnutls-dev', u'nodejs'])
+2016-10-07 12:02:21,612 p=26400 u=dima |  TASK [installing gems] *********************************************************
+2016-10-07 12:02:30,222 p=26400 u=dima |  changed: [192.168.0.11]
+2016-10-07 12:02:30,226 p=26400 u=dima |  PLAY RECAP *********************************************************************
+2016-10-07 12:02:30,226 p=26400 u=dima |  192.168.0.11               : ok=6    changed=3    unreachable=0    failed=0   
+2016-10-07 12:03:15,445 p=26465 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-07 12:03:15,471 p=26465 u=dima |  PLAY [apps] ********************************************************************
+2016-10-07 12:03:15,481 p=26465 u=dima |  TASK [setup] *******************************************************************
+2016-10-07 12:03:16,803 p=26465 u=dima |  ok: [192.168.0.11]
+2016-10-07 12:03:16,804 p=26465 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-07 12:03:28,052 p=26465 u=dima |  changed: [192.168.0.11]
+2016-10-07 12:03:28,053 p=26465 u=dima |  TASK [copy .bachrc] ************************************************************
+2016-10-07 12:03:28,712 p=26465 u=dima |  ok: [192.168.0.11]
+2016-10-07 12:03:28,713 p=26465 u=dima |  TASK [apply .bashrc] ***********************************************************
+2016-10-07 12:03:29,022 p=26465 u=dima |  changed: [192.168.0.11]
+2016-10-07 12:03:29,024 p=26465 u=dima |  TASK [installing all packages] *************************************************
+2016-10-07 12:03:29,687 p=26465 u=dima |  ok: [192.168.0.11] => (item=[u'git-core', u'curl', u'libssl-dev', u'libreadline-dev', u'zlib1g-dev', u'zlibc', u'zlib1g', u'ruby-build', u'build-essential', u'm4', u'ruby-railties-3.2', u'mysql-client', u'libmysqlclient-dev', u'libcurl4-gnutls-dev', u'nodejs'])
+2016-10-07 12:03:29,689 p=26465 u=dima |  TASK [installing gems] *********************************************************
+2016-10-07 12:03:31,526 p=26465 u=dima |  ok: [192.168.0.11]
+2016-10-07 12:03:31,527 p=26465 u=dima |  PLAY RECAP *********************************************************************
+2016-10-07 12:03:31,527 p=26465 u=dima |  192.168.0.11               : ok=6    changed=2    unreachable=0    failed=0   
+2016-10-07 12:08:06,921 p=26535 u=dima |   [WARNING]: While constructing a mapping from
+/home/dima/virts/ansible/playbooks/apps.yml, line 66, column 5, found a
+duplicate dict key (gem). Using last defined value only.
+
+2016-10-07 12:08:06,941 p=26535 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-07 12:08:06,967 p=26535 u=dima |  PLAY [apps] ********************************************************************
+2016-10-07 12:08:06,977 p=26535 u=dima |  TASK [setup] *******************************************************************
+2016-10-07 12:08:29,298 p=26535 u=dima |  ok: [192.168.0.11]
+2016-10-07 12:08:29,299 p=26535 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-07 12:08:40,773 p=26535 u=dima |  changed: [192.168.0.11]
+2016-10-07 12:08:40,774 p=26535 u=dima |  TASK [copy .bachrc] ************************************************************
+2016-10-07 12:08:41,429 p=26535 u=dima |  ok: [192.168.0.11]
+2016-10-07 12:08:41,430 p=26535 u=dima |  TASK [apply .bashrc] ***********************************************************
+2016-10-07 12:08:41,738 p=26535 u=dima |  changed: [192.168.0.11]
+2016-10-07 12:08:41,739 p=26535 u=dima |  TASK [installing all packages] *************************************************
+2016-10-07 12:08:42,454 p=26535 u=dima |  ok: [192.168.0.11] => (item=[u'git-core', u'curl', u'libssl-dev', u'libreadline-dev', u'zlib1g-dev', u'zlibc', u'zlib1g', u'ruby-build', u'build-essential', u'm4', u'ruby-railties-3.2', u'mysql-client', u'libmysqlclient-dev', u'libcurl4-gnutls-dev', u'nodejs'])
+2016-10-07 12:08:42,456 p=26535 u=dima |  TASK [installing gems] *********************************************************
+2016-10-07 12:08:42,799 p=26535 u=dima |  fatal: [192.168.0.11]: FAILED! => {"changed": false, "failed": true, "msg": "value of state must be one of: present,absent,latest, got: 4.0.0"}
+2016-10-07 12:08:42,799 p=26535 u=dima |  	to retry, use: --limit @/home/dima/virts/ansible/playbooks/apps.retry
+
+2016-10-07 12:08:42,800 p=26535 u=dima |  PLAY RECAP *********************************************************************
+2016-10-07 12:08:42,800 p=26535 u=dima |  192.168.0.11               : ok=5    changed=2    unreachable=0    failed=1   
+2016-10-07 12:12:42,142 p=26631 u=dima |   [WARNING]: While constructing a mapping from
+/home/dima/virts/ansible/playbooks/apps.yml, line 66, column 5, found a
+duplicate dict key (gem). Using last defined value only.
+
+2016-10-07 12:12:42,164 p=26631 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-07 12:12:42,192 p=26631 u=dima |  PLAY [apps] ********************************************************************
+2016-10-07 12:12:42,203 p=26631 u=dima |  TASK [setup] *******************************************************************
+2016-10-07 12:13:03,765 p=26631 u=dima |  ok: [192.168.0.11]
+2016-10-07 12:13:03,766 p=26631 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-07 12:13:14,992 p=26631 u=dima |  changed: [192.168.0.11]
+2016-10-07 12:13:14,994 p=26631 u=dima |  TASK [copy .bachrc] ************************************************************
+2016-10-07 12:13:15,649 p=26631 u=dima |  ok: [192.168.0.11]
+2016-10-07 12:13:15,651 p=26631 u=dima |  TASK [apply .bashrc] ***********************************************************
+2016-10-07 12:13:15,948 p=26631 u=dima |  changed: [192.168.0.11]
+2016-10-07 12:13:15,950 p=26631 u=dima |  TASK [installing all packages] *************************************************
+2016-10-07 12:13:16,634 p=26631 u=dima |  ok: [192.168.0.11] => (item=[u'git-core', u'curl', u'libssl-dev', u'libreadline-dev', u'zlib1g-dev', u'zlibc', u'zlib1g', u'ruby-build', u'build-essential', u'm4', u'ruby-railties-3.2', u'mysql-client', u'libmysqlclient-dev', u'libcurl4-gnutls-dev', u'nodejs'])
+2016-10-07 12:13:16,635 p=26631 u=dima |  TASK [installing gems] *********************************************************
+2016-10-07 12:16:20,584 p=26631 u=dima |  changed: [192.168.0.11]
+2016-10-07 12:16:20,585 p=26631 u=dima |  PLAY RECAP *********************************************************************
+2016-10-07 12:16:20,585 p=26631 u=dima |  192.168.0.11               : ok=6    changed=3    unreachable=0    failed=0   
+2016-10-07 12:34:06,468 p=26777 u=dima |   [WARNING]: While constructing a mapping from
+/home/dima/virts/ansible/playbooks/apps.yml, line 66, column 5, found a
+duplicate dict key (gem). Using last defined value only.
+
+2016-10-07 12:34:06,490 p=26777 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-07 12:34:06,518 p=26777 u=dima |  PLAY [apps] ********************************************************************
+2016-10-07 12:34:06,529 p=26777 u=dima |  TASK [setup] *******************************************************************
+2016-10-07 12:34:28,172 p=26777 u=dima |  ok: [192.168.0.11]
+2016-10-07 12:34:28,174 p=26777 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-07 12:34:41,154 p=26777 u=dima |  changed: [192.168.0.11]
+2016-10-07 12:34:41,156 p=26777 u=dima |  TASK [copy .bachrc] ************************************************************
+2016-10-07 12:34:41,844 p=26777 u=dima |  ok: [192.168.0.11]
+2016-10-07 12:34:41,845 p=26777 u=dima |  TASK [apply .bashrc] ***********************************************************
+2016-10-07 12:34:42,160 p=26777 u=dima |  changed: [192.168.0.11]
+2016-10-07 12:34:42,161 p=26777 u=dima |  TASK [installing all packages] *************************************************
+2016-10-07 12:34:42,888 p=26777 u=dima |  ok: [192.168.0.11] => (item=[u'git-core', u'curl', u'libssl-dev', u'libreadline-dev', u'zlib1g-dev', u'zlibc', u'zlib1g', u'ruby-build', u'build-essential', u'm4', u'ruby-railties-3.2', u'mysql-client', u'libmysqlclient-dev', u'libcurl4-gnutls-dev', u'nodejs'])
+2016-10-07 12:34:42,889 p=26777 u=dima |  TASK [installing gems] *********************************************************
+2016-10-07 12:34:57,348 p=26777 u=dima |  changed: [192.168.0.11]
+2016-10-07 12:34:57,350 p=26777 u=dima |  TASK [installing rails] ********************************************************
+2016-10-07 12:34:57,805 p=26777 u=dima |  ok: [192.168.0.11]
+2016-10-07 12:34:57,807 p=26777 u=dima |  PLAY RECAP *********************************************************************
+2016-10-07 12:34:57,807 p=26777 u=dima |  192.168.0.11               : ok=7    changed=3    unreachable=0    failed=0   
+2016-10-07 12:36:24,541 p=26852 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-07 12:36:24,569 p=26852 u=dima |  PLAY [apps] ********************************************************************
+2016-10-07 12:36:24,583 p=26852 u=dima |  TASK [setup] *******************************************************************
+2016-10-07 12:36:44,711 p=26852 u=dima |  ok: [192.168.0.11]
+2016-10-07 12:36:44,713 p=26852 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-07 12:36:55,978 p=26852 u=dima |  changed: [192.168.0.11]
+2016-10-07 12:36:55,979 p=26852 u=dima |  TASK [copy .bachrc] ************************************************************
+2016-10-07 12:36:56,649 p=26852 u=dima |  ok: [192.168.0.11]
+2016-10-07 12:36:56,650 p=26852 u=dima |  TASK [apply .bashrc] ***********************************************************
+2016-10-07 12:36:56,958 p=26852 u=dima |  changed: [192.168.0.11]
+2016-10-07 12:36:56,960 p=26852 u=dima |  TASK [installing all packages] *************************************************
+2016-10-07 12:36:57,652 p=26852 u=dima |  ok: [192.168.0.11] => (item=[u'git-core', u'curl', u'libssl-dev', u'libreadline-dev', u'zlib1g-dev', u'zlibc', u'zlib1g', u'ruby-build', u'build-essential', u'm4', u'ruby-railties-3.2', u'mysql-client', u'libmysqlclient-dev', u'libcurl4-gnutls-dev', u'nodejs'])
+2016-10-07 12:36:57,654 p=26852 u=dima |  TASK [gem] *********************************************************************
+2016-10-07 12:37:11,373 p=26852 u=dima |  changed: [192.168.0.11]
+2016-10-07 12:37:11,374 p=26852 u=dima |  TASK [gem] *********************************************************************
+2016-10-07 12:37:12,455 p=26852 u=dima |  ok: [192.168.0.11]
+2016-10-07 12:37:12,456 p=26852 u=dima |  TASK [getting app from github] *************************************************
+2016-10-07 12:37:14,533 p=26852 u=dima |  changed: [192.168.0.11]
+2016-10-07 12:37:14,535 p=26852 u=dima |  PLAY RECAP *********************************************************************
+2016-10-07 12:37:14,535 p=26852 u=dima |  192.168.0.11               : ok=8    changed=4    unreachable=0    failed=0   
+2016-10-07 13:00:59,163 p=29066 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-07 13:00:59,194 p=29066 u=dima |  PLAY [apps] ********************************************************************
+2016-10-07 13:00:59,205 p=29066 u=dima |  TASK [setup] *******************************************************************
+2016-10-07 13:01:09,372 p=29066 u=dima |  fatal: [192.168.0.11]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh.", "unreachable": true}
+2016-10-07 13:01:09,373 p=29066 u=dima |  	to retry, use: --limit @/home/dima/virts/ansible/playbooks/apps.retry
+
+2016-10-07 13:01:09,373 p=29066 u=dima |  PLAY RECAP *********************************************************************
+2016-10-07 13:01:09,373 p=29066 u=dima |  192.168.0.11               : ok=0    changed=0    unreachable=1    failed=0   
+2016-10-07 13:04:11,016 p=29092 u=dima |  ERROR! Missing target hosts
+2016-10-07 13:04:30,964 p=29097 u=dima |  192.168.0.2 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh.", 
+    "unreachable": true
+}
+2016-10-07 13:04:30,966 p=29097 u=dima |  192.168.0.5 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh.", 
+    "unreachable": true
+}
+2016-10-07 13:04:30,972 p=29097 u=dima |  192.168.0.4 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh.", 
+    "unreachable": true
+}
+2016-10-07 13:04:33,984 p=29097 u=dima |  192.168.0.6 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh.", 
+    "unreachable": true
+}
+2016-10-07 13:04:33,992 p=29097 u=dima |  192.168.0.7 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh.", 
+    "unreachable": true
+}
+2016-10-07 13:04:33,995 p=29097 u=dima |  192.168.0.8 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh.", 
+    "unreachable": true
+}
+2016-10-07 13:04:37,004 p=29097 u=dima |  192.168.0.9 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh.", 
+    "unreachable": true
+}
+2016-10-07 13:04:37,018 p=29097 u=dima |  192.168.0.10 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh.", 
+    "unreachable": true
+}
+2016-10-07 13:04:38,044 p=29097 u=dima |  192.168.0.3 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh.", 
+    "unreachable": true
+}
+2016-10-07 13:04:54,114 p=29097 u=dima |  192.168.0.11 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh.", 
+    "unreachable": true
+}
+2016-10-07 13:05:07,237 p=29097 u=dima |   [ERROR]: User interrupted execution
+
+2016-10-07 13:05:35,146 p=29153 u=dima |  192.168.0.11 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh.", 
+    "unreachable": true
+}
+2016-10-07 13:11:11,965 p=29224 u=dima |  192.168.0.11 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh.", 
+    "unreachable": true
+}
+2016-10-07 13:18:14,543 p=17677 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-07 13:18:14,572 p=17677 u=dima |  PLAY [apps] ********************************************************************
+2016-10-07 13:18:14,583 p=17677 u=dima |  TASK [setup] *******************************************************************
+2016-10-07 13:18:24,749 p=17677 u=dima |  fatal: [192.168.0.3]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh.", "unreachable": true}
+2016-10-07 13:18:24,750 p=17677 u=dima |  	to retry, use: --limit @/home/dima/virts/ansible/playbooks/apps.retry
+
+2016-10-07 13:18:24,750 p=17677 u=dima |  PLAY RECAP *********************************************************************
+2016-10-07 13:18:24,750 p=17677 u=dima |  192.168.0.3                : ok=0    changed=0    unreachable=1    failed=0   
+2016-10-07 13:20:13,083 p=17723 u=dima |  192.168.0.3 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh.", 
+    "unreachable": true
+}
+2016-10-07 13:22:05,912 p=17741 u=dima |  192.168.0.3 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh.", 
+    "unreachable": true
+}
+2016-10-07 13:25:06,756 p=17761 u=dima |  192.168.0.3 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2016-10-07 13:25:37,574 p=17783 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-07 13:25:37,607 p=17783 u=dima |  PLAY [apps] ********************************************************************
+2016-10-07 13:25:37,616 p=17783 u=dima |  TASK [setup] *******************************************************************
+2016-10-07 13:25:38,888 p=17783 u=dima |  ok: [192.168.0.3]
+2016-10-07 13:25:38,890 p=17783 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-07 13:26:00,482 p=17783 u=dima |  changed: [192.168.0.3]
+2016-10-07 13:26:00,484 p=17783 u=dima |  TASK [copy .bachrc] ************************************************************
+2016-10-07 13:26:00,858 p=17783 u=dima |  changed: [192.168.0.3]
+2016-10-07 13:26:00,860 p=17783 u=dima |  TASK [apply .bashrc] ***********************************************************
+2016-10-07 13:26:00,977 p=17783 u=dima |  changed: [192.168.0.3]
+2016-10-07 13:26:00,979 p=17783 u=dima |  TASK [installing all packages] *************************************************
+2016-10-07 13:26:53,366 p=17783 u=dima |  changed: [192.168.0.3] => (item=[u'git-core', u'curl', u'libssl-dev', u'libreadline-dev', u'zlib1g-dev', u'zlibc', u'zlib1g', u'ruby-build', u'build-essential', u'm4', u'ruby-railties-3.2', u'mysql-client', u'libmysqlclient-dev', u'libcurl4-gnutls-dev', u'nodejs'])
+2016-10-07 13:26:53,368 p=17783 u=dima |  TASK [Install rbenv] ***********************************************************
+2016-10-07 13:27:19,288 p=17783 u=dima |  changed: [192.168.0.3]
+2016-10-07 13:27:19,290 p=17783 u=dima |  TASK [Install ruby] ************************************************************
+2016-10-07 13:32:36,758 p=17783 u=dima |  changed: [192.168.0.3]
+2016-10-07 13:32:36,760 p=17783 u=dima |  TASK [set ruby global] *********************************************************
+2016-10-07 13:32:37,079 p=17783 u=dima |  changed: [192.168.0.3]
+2016-10-07 13:32:37,081 p=17783 u=dima |  TASK [installing gems] *********************************************************
+2016-10-07 13:32:45,808 p=17783 u=dima |  changed: [192.168.0.3]
+2016-10-07 13:32:45,810 p=17783 u=dima |  TASK [gem mysql2] **************************************************************
+2016-10-07 13:32:52,554 p=17783 u=dima |  changed: [192.168.0.3]
+2016-10-07 13:32:52,556 p=17783 u=dima |  TASK [gem passenger] ***********************************************************
+2016-10-07 13:33:08,431 p=17783 u=dima |  fatal: [192.168.0.3]: FAILED! => {"changed": true, "cmd": ["bash", "-c", "gem install passenger"], "delta": "0:00:15.601773", "end": "2016-10-07 10:33:08.433873", "failed": true, "rc": 1, "start": "2016-10-07 10:32:52.832100", "stderr": "ERROR:  Error installing passenger:\n\track requires Ruby version >= 2.2.2.", "stdout": "", "stdout_lines": [], "warnings": []}
+2016-10-07 13:33:08,432 p=17783 u=dima |  	to retry, use: --limit @/home/dima/virts/ansible/playbooks/apps.retry
+
+2016-10-07 13:33:08,432 p=17783 u=dima |  PLAY RECAP *********************************************************************
+2016-10-07 13:33:08,433 p=17783 u=dima |  192.168.0.3                : ok=10   changed=9    unreachable=0    failed=1   
+2016-10-07 13:35:33,695 p=17916 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-07 13:35:33,722 p=17916 u=dima |  PLAY [apps] ********************************************************************
+2016-10-07 13:35:33,733 p=17916 u=dima |  TASK [setup] *******************************************************************
+2016-10-07 13:35:55,658 p=17916 u=dima |  ok: [192.168.0.3]
+2016-10-07 13:35:55,660 p=17916 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-07 13:36:07,067 p=17916 u=dima |  changed: [192.168.0.3]
+2016-10-07 13:36:07,068 p=17916 u=dima |  TASK [copy .bachrc] ************************************************************
+2016-10-07 13:36:07,742 p=17916 u=dima |  ok: [192.168.0.3]
+2016-10-07 13:36:07,744 p=17916 u=dima |  TASK [apply .bashrc] ***********************************************************
+2016-10-07 13:36:08,060 p=17916 u=dima |  changed: [192.168.0.3]
+2016-10-07 13:36:08,061 p=17916 u=dima |  TASK [installing all packages] *************************************************
+2016-10-07 13:36:08,760 p=17916 u=dima |  ok: [192.168.0.3] => (item=[u'git-core', u'curl', u'libssl-dev', u'libreadline-dev', u'zlib1g-dev', u'zlibc', u'zlib1g', u'ruby-build', u'build-essential', u'm4', u'ruby-railties-3.2', u'mysql-client', u'libmysqlclient-dev', u'libcurl4-gnutls-dev', u'nodejs'])
+2016-10-07 13:36:08,762 p=17916 u=dima |  TASK [gem passenger] ***********************************************************
+2016-10-07 13:36:10,834 p=17916 u=dima |  fatal: [192.168.0.3]: FAILED! => {"changed": true, "cmd": ["bash", "-c", "gem install passenger"], "delta": "0:00:01.812763", "end": "2016-10-07 10:36:10.841111", "failed": true, "rc": 1, "start": "2016-10-07 10:36:09.028348", "stderr": "ERROR:  Error installing passenger:\n\track requires Ruby version >= 2.2.2.", "stdout": "", "stdout_lines": [], "warnings": []}
+2016-10-07 13:36:10,834 p=17916 u=dima |  	to retry, use: --limit @/home/dima/virts/ansible/playbooks/apps.retry
+
+2016-10-07 13:36:10,835 p=17916 u=dima |  PLAY RECAP *********************************************************************
+2016-10-07 13:36:10,835 p=17916 u=dima |  192.168.0.3                : ok=5    changed=2    unreachable=0    failed=1   
+2016-10-10 10:45:16,785 p=25642 u=dima |   [ERROR]: User interrupted execution
+
+2016-10-10 10:45:23,422 p=25654 u=dima |  ERROR! Missing target hosts
+2016-10-10 10:45:55,911 p=25659 u=dima |  192.168.0.3 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2016-10-10 10:46:13,147 p=25681 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-10 10:46:13,176 p=25681 u=dima |  PLAY [apps] ********************************************************************
+2016-10-10 10:46:13,186 p=25681 u=dima |  TASK [setup] *******************************************************************
+2016-10-10 10:46:14,437 p=25681 u=dima |  ok: [192.168.0.3]
+2016-10-10 10:46:14,439 p=25681 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-10 10:46:33,361 p=25681 u=dima |  changed: [192.168.0.3]
+2016-10-10 10:46:33,366 p=25681 u=dima |  TASK [copy .bachrc] ************************************************************
+2016-10-10 10:46:33,733 p=25681 u=dima |  changed: [192.168.0.3]
+2016-10-10 10:46:33,735 p=25681 u=dima |  TASK [apply .bashrc] ***********************************************************
+2016-10-10 10:46:33,843 p=25681 u=dima |  changed: [192.168.0.3]
+2016-10-10 10:46:33,845 p=25681 u=dima |  TASK [installing all packages] *************************************************
+2016-10-10 10:47:12,618 p=25681 u=dima |  changed: [192.168.0.3] => (item=[u'git-core', u'curl', u'libssl-dev', u'libreadline-dev', u'zlib1g-dev', u'zlibc', u'zlib1g', u'ruby-build', u'build-essential', u'libpcre3-dev', u'm4', u'ruby-railties-3.2', u'mysql-client', u'libmysqlclient-dev', u'libcurl4-gnutls-dev', u'nodejs', u'nginx'])
+2016-10-10 10:47:12,620 p=25681 u=dima |  TASK [Install rbenv] ***********************************************************
+2016-10-10 10:47:33,176 p=25681 u=dima |  changed: [192.168.0.3]
+2016-10-10 10:47:33,178 p=25681 u=dima |  TASK [Install ruby] ************************************************************
+2016-10-10 10:52:25,262 p=25681 u=dima |  changed: [192.168.0.3]
+2016-10-10 10:52:25,263 p=25681 u=dima |  TASK [set ruby global] *********************************************************
+2016-10-10 10:52:25,540 p=25681 u=dima |  changed: [192.168.0.3]
+2016-10-10 10:52:25,542 p=25681 u=dima |  TASK [installing gems] *********************************************************
+2016-10-10 10:52:33,423 p=25681 u=dima |  changed: [192.168.0.3]
+2016-10-10 10:52:33,425 p=25681 u=dima |  TASK [getting gem rails] *******************************************************
+2016-10-10 11:02:39,525 p=25681 u=dima |  changed: [192.168.0.3]
+2016-10-10 11:02:39,527 p=25681 u=dima |  TASK [getting gem mysql2] ******************************************************
+2016-10-10 11:02:48,115 p=25681 u=dima |  changed: [192.168.0.3]
+2016-10-10 11:02:48,117 p=25681 u=dima |  TASK [getting gem passenger] ***************************************************
+2016-10-10 11:03:21,868 p=25681 u=dima |  changed: [192.168.0.3]
+2016-10-10 11:03:21,870 p=25681 u=dima |  TASK [getting app from github] *************************************************
+2016-10-10 11:03:23,864 p=25681 u=dima |  changed: [192.168.0.3]
+2016-10-10 11:03:23,865 p=25681 u=dima |  TASK [copy nginx default] ******************************************************
+2016-10-10 11:03:24,786 p=25681 u=dima |  changed: [192.168.0.3]
+2016-10-10 11:03:24,788 p=25681 u=dima |  TASK [bundle install] **********************************************************
+2016-10-10 11:03:25,309 p=25681 u=dima |  fatal: [192.168.0.3]: FAILED! => {"changed": true, "cmd": ["bash", "-c", "cd rails4-mysql-sample | bundle install"], "delta": "0:00:00.249610", "end": "2016-10-10 08:03:25.273440", "failed": true, "rc": 10, "start": "2016-10-10 08:03:25.023830", "stderr": "", "stdout": "Could not locate Gemfile or .bundle/ directory", "stdout_lines": ["Could not locate Gemfile or .bundle/ directory"], "warnings": []}
+2016-10-10 11:03:25,310 p=25681 u=dima |  	to retry, use: --limit @/home/dima/virts/ansible/playbooks/apps.retry
+
+2016-10-10 11:03:25,310 p=25681 u=dima |  PLAY RECAP *********************************************************************
+2016-10-10 11:03:25,310 p=25681 u=dima |  192.168.0.3                : ok=14   changed=13   unreachable=0    failed=1   
+2016-10-10 11:11:49,349 p=25954 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-10 11:11:49,375 p=25954 u=dima |  PLAY [apps] ********************************************************************
+2016-10-10 11:11:49,383 p=25954 u=dima |  TASK [setup] *******************************************************************
+2016-10-10 11:12:11,058 p=25954 u=dima |  ok: [192.168.0.3]
+2016-10-10 11:12:11,060 p=25954 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-10 11:12:23,426 p=25954 u=dima |  changed: [192.168.0.3]
+2016-10-10 11:12:23,427 p=25954 u=dima |  TASK [copy .bachrc] ************************************************************
+2016-10-10 11:12:24,101 p=25954 u=dima |  ok: [192.168.0.3]
+2016-10-10 11:12:24,102 p=25954 u=dima |  TASK [apply .bashrc] ***********************************************************
+2016-10-10 11:12:24,417 p=25954 u=dima |  changed: [192.168.0.3]
+2016-10-10 11:12:24,419 p=25954 u=dima |  TASK [bundle install] **********************************************************
+2016-10-10 11:13:52,710 p=25954 u=dima |  changed: [192.168.0.3]
+2016-10-10 11:13:52,715 p=25954 u=dima |  TASK [restart nginx] ***********************************************************
+2016-10-10 11:13:54,127 p=25954 u=dima |  changed: [192.168.0.3]
+2016-10-10 11:13:54,128 p=25954 u=dima |  PLAY RECAP *********************************************************************
+2016-10-10 11:13:54,128 p=25954 u=dima |  192.168.0.3                : ok=6    changed=4    unreachable=0    failed=0   
+2016-10-10 11:21:45,066 p=26073 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-10 11:21:45,068 p=26073 u=dima |  ERROR! 'sudi' is not a valid attribute for a Task
+
+The error appears to have been in '/home/dima/virts/ansible/playbooks/apps.yml': line 85, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    command: passenger start --auto chdir=/home/ubuntu/rails4-mysql-sample
+  - name: restart nginx
+    ^ here
+
+2016-10-10 11:22:19,545 p=26080 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-10 11:22:19,547 p=26080 u=dima |  ERROR! 'sudi' is not a valid attribute for a Task
+
+The error appears to have been in '/home/dima/virts/ansible/playbooks/apps.yml': line 85, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    command: passenger start --auto chdir=/home/ubuntu/rails4-mysql-sample
+  - name: restart nginx
+    ^ here
+
+2016-10-10 11:23:15,995 p=26088 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-10 11:23:15,996 p=26088 u=dima |  ERROR! 'sudi' is not a valid attribute for a Task
+
+The error appears to have been in '/home/dima/virts/ansible/playbooks/apps.yml': line 85, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    command: passenger start --auto chdir=/home/ubuntu/rails4-mysql-sample
+  - name: restart nginx
+    ^ here
+
+2016-10-10 11:23:30,799 p=26095 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-10 11:23:30,801 p=26095 u=dima |  ERROR! conflicting action statements
+
+The error appears to have been in '/home/dima/virts/ansible/playbooks/apps.yml': line 83, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    command: bundle install chdir=/home/ubuntu/rails4-mysql-sample
+  - name: start passenger
+    ^ here
+
+
+The error appears to have been in '/home/dima/virts/ansible/playbooks/apps.yml': line 83, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    command: bundle install chdir=/home/ubuntu/rails4-mysql-sample
+  - name: start passenger
+    ^ here
+
+2016-10-10 11:24:25,017 p=26102 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-10 11:24:25,042 p=26102 u=dima |  PLAY [apps] ********************************************************************
+2016-10-10 11:24:25,051 p=26102 u=dima |  TASK [setup] *******************************************************************
+2016-10-10 11:24:45,493 p=26102 u=dima |  ok: [192.168.0.3]
+2016-10-10 11:24:45,495 p=26102 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-10 11:24:56,515 p=26102 u=dima |  changed: [192.168.0.3]
+2016-10-10 11:24:56,517 p=26102 u=dima |  TASK [copy .bachrc] ************************************************************
+2016-10-10 11:24:57,175 p=26102 u=dima |  ok: [192.168.0.3]
+2016-10-10 11:24:57,176 p=26102 u=dima |  TASK [apply .bashrc] ***********************************************************
+2016-10-10 11:24:57,482 p=26102 u=dima |  changed: [192.168.0.3]
+2016-10-10 11:24:57,483 p=26102 u=dima |  TASK [bundle install] **********************************************************
+2016-10-10 11:24:58,101 p=26102 u=dima |  changed: [192.168.0.3]
+2016-10-10 11:24:58,102 p=26102 u=dima |  TASK [start passenger] *********************************************************
+2016-10-10 11:26:43,460 p=26102 u=dima |   [ERROR]: User interrupted execution
+
+2016-10-10 12:02:21,600 p=28200 u=dima |  ERROR! Syntax Error while loading YAML.
+
+
+The error appears to have been in '/home/dima/virts/ansible/playbooks/apps.yml': line 56, column 8, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+        - ruby-railties-3.2
+       - mysql-client
+       ^ here
+
+2016-10-10 12:02:42,034 p=28208 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-10 12:02:42,063 p=28208 u=dima |  PLAY [apps] ********************************************************************
+2016-10-10 12:02:42,072 p=28208 u=dima |  TASK [setup] *******************************************************************
+2016-10-10 12:02:52,225 p=28208 u=dima |  fatal: [192.168.0.3]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh.", "unreachable": true}
+2016-10-10 12:02:52,226 p=28208 u=dima |  	to retry, use: --limit @/home/dima/virts/ansible/playbooks/apps.retry
+
+2016-10-10 12:02:52,226 p=28208 u=dima |  PLAY RECAP *********************************************************************
+2016-10-10 12:02:52,226 p=28208 u=dima |  192.168.0.3                : ok=0    changed=0    unreachable=1    failed=0   
+2016-10-10 12:04:10,702 p=28221 u=dima |  192.168.0.3 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2016-10-10 12:04:31,805 p=28243 u=dima |  [DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and 
+make sure become_method is 'sudo' (default).
+This feature will be removed in a 
+future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2016-10-10 12:04:31,835 p=28243 u=dima |  PLAY [apps] ********************************************************************
+2016-10-10 12:04:31,846 p=28243 u=dima |  TASK [setup] *******************************************************************
+2016-10-10 12:04:33,128 p=28243 u=dima |  ok: [192.168.0.3]
+2016-10-10 12:04:33,130 p=28243 u=dima |  TASK [apt-get update] **********************************************************
+2016-10-10 12:04:51,919 p=28243 u=dima |  changed: [192.168.0.3]
+2016-10-10 12:04:51,922 p=28243 u=dima |  TASK [copy .bachrc] ************************************************************
+2016-10-10 12:04:52,286 p=28243 u=dima |  changed: [192.168.0.3]
+2016-10-10 12:04:52,288 p=28243 u=dima |  TASK [apply .bashrc] ***********************************************************
+2016-10-10 12:04:52,404 p=28243 u=dima |  changed: [192.168.0.3]
+2016-10-10 12:04:52,406 p=28243 u=dima |  TASK [installing all packages] *************************************************
+2016-10-10 12:05:43,432 p=28243 u=dima |  changed: [192.168.0.3] => (item=[u'git-core', u'curl', u'libssl-dev', u'libreadline-dev', u'zlib1g-dev', u'zlibc', u'zlib1g', u'ruby-build', u'build-essential', u'libpcre3-dev', u'm4', u'ruby-railties-3.2', u'mysql-client', u'libmysqlclient-dev', u'libcurl4-gnutls-dev', u'nodejs', u'nginx'])
+2016-10-10 12:05:43,434 p=28243 u=dima |  TASK [Install rbenv] ***********************************************************
+2016-10-10 12:06:04,235 p=28243 u=dima |  changed: [192.168.0.3]
+2016-10-10 12:06:04,236 p=28243 u=dima |  TASK [Install ruby] ************************************************************
+2016-10-10 12:11:07,803 p=28243 u=dima |  changed: [192.168.0.3]
+2016-10-10 12:11:07,805 p=28243 u=dima |  TASK [set ruby global] *********************************************************
+2016-10-10 12:11:08,089 p=28243 u=dima |  changed: [192.168.0.3]
+2016-10-10 12:11:08,091 p=28243 u=dima |  TASK [getting gem bundler] *****************************************************
+2016-10-10 12:11:16,028 p=28243 u=dima |  changed: [192.168.0.3]
+2016-10-10 12:11:16,029 p=28243 u=dima |  TASK [getting gem rails] *******************************************************
+2016-10-10 12:21:24,157 p=28243 u=dima |  changed: [192.168.0.3]
+2016-10-10 12:21:24,159 p=28243 u=dima |  TASK [getting gem mysql2] ******************************************************
+2016-10-10 12:21:30,952 p=28243 u=dima |  changed: [192.168.0.3]
+2016-10-10 12:21:30,954 p=28243 u=dima |  TASK [getting gem passenger] ***************************************************
+2016-10-10 12:21:56,503 p=28243 u=dima |  changed: [192.168.0.3]
+2016-10-10 12:21:56,505 p=28243 u=dima |  TASK [getting app from github] *************************************************
+2016-10-10 12:21:58,589 p=28243 u=dima |  changed: [192.168.0.3]
+2016-10-10 12:21:58,591 p=28243 u=dima |  TASK [copy nginx default] ******************************************************
+2016-10-10 12:21:59,244 p=28243 u=dima |  changed: [192.168.0.3]
+2016-10-10 12:21:59,247 p=28243 u=dima |  TASK [bundle install (installing gems)] ****************************************
+2016-10-10 12:23:18,782 p=28243 u=dima |  changed: [192.168.0.3]
+2016-10-10 12:23:18,784 p=28243 u=dima |  TASK [restart nginx] ***********************************************************
+2016-10-10 12:23:20,241 p=28243 u=dima |  changed: [192.168.0.3]
+2016-10-10 12:23:20,243 p=28243 u=dima |  TASK [start passenger] *********************************************************
+2016-10-10 12:24:34,259 p=28243 u=dima |  ERROR! Unexpected Exception: release unlocked lock
+2016-10-10 12:24:34,259 p=28243 u=dima |  to see the full traceback, use -vvv

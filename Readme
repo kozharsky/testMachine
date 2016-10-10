@@ -1,0 +1,56 @@
+It means the user ubuntu
+
+insert in the head of ~/.bashrc
+
+if [ -d $HOME/.rbenv ]; then
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+fi
+
+do it on a remote machine
+
+ssh-key
+ssh-copy-id ubuntu@db
+ssh-copy-id ubuntu@app
+
+sudo apt-get install ansible
+
+from 'test' folder
+
+inset db and app ip addresses in hosts file
+
+ansible-playbook playbooks/apps.yml -u ubuntu
+
+in db server
+____________________________________________________________
+mysql -u root -p 1212
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '1212';
+sudo service mysql restart
+
+
+in app server
+_______________________________________________________-
+correct if necessary 
+~/rails4-mysql-sample/config/database.yml
+
+
+make
+cd ~/rails4-mysql-sample/
+bundle install
+
+install nginx
+sudo /home/ubuntu/.rbenv/shims/passenger-install-nginx-module(install in opt)
+
+put nginx in /etc/init.d/
+put nginx.conf in /opt/nginx/conf/nginx.conf
+
+make
+sudo chmod +x /etc/init.d/nginx
+sudo /usr/sbin/update-rc.d -f nginx defaults
+
+rake db:create
+rake db:migrate RAILS_ENV=development
+sudo service nginx restart
+
+
+
